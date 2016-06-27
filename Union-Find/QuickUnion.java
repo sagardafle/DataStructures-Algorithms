@@ -21,6 +21,13 @@ public class QuickUnion{
     }
     
     public static void union(int a, int b){
+        
+        /*
+            RULED : 
+            1. Root of 1st component becomes the child of the root of second component. 
+            2. a[i] is the parent of i.
+            3. Root of i is id[id[id[....id[i]....]]]
+        */
         int i = root(a);
         int j = root(b);
         numberarray[i] = j;
