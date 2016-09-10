@@ -97,7 +97,7 @@ public class DeleteNode{
             current = head;
             current.next = null;
             nodeLength++;
-        } else {
+        }else{
             current = head;
             while(current.next!=null){
                 current = current.next;
