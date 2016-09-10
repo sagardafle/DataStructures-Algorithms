@@ -35,9 +35,14 @@ public class DeleteNode{
         // System.out.println("\n\n==After deleting from rear==");
         // delnode.printLinkedList();
         
-        delnode.deletefromIndex(3);
-        System.out.println("\n\n==After deleting from specified index==");
+        // delnode.deletefromIndex(3);
+        // System.out.println("\n\n==After deleting from specified index==");
+        // delnode.printLinkedList();
+        
+        delnode.deleteFromMiddle();
+        System.out.println("\n\n==After deleting from middle ==");
         delnode.printLinkedList();
+        
     }
     
     public void deletefromFront(){
@@ -71,6 +76,17 @@ public class DeleteNode{
         }
         Node nodeToBeRemoved = current.next;
         current.next = nodeToBeRemoved.next;
+        nodeLength--;
+    }
+    
+    public void deleteFromMiddle(){
+        int index = (nodeLength%2==0)? nodeLength/2-1 : nodeLength/2 ;
+        int i=1;
+        current = head;
+        while(++i<index){
+            current = current.next;
+        }
+        current.next = current.next.next;
         nodeLength--;
     }
     
