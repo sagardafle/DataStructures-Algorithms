@@ -18,9 +18,9 @@ public class InsertNode {
      }
     
      
-     private int nodeLength =0;
-     private Node current= null;
-     private Node head = null;
+     public int nodeLength =0;
+     public Node current= null;
+     public Node head = null;
      
      public static void main(String args[]){
         InsertNode insnode = new InsertNode();
