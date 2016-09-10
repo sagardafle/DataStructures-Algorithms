@@ -9,7 +9,7 @@ public class ReverseLinkedList{
         }
     }
     Node current=null;
-    Node head,previousNode,nextNode =null;
+    static Node head,previousNode,nextNode =null;
     int nodeLength =0;
     
     public static void main(String args[]){
@@ -26,12 +26,15 @@ public class ReverseLinkedList{
         reverselistobj.printLinkedList();
         
         System.out.println("\n\n++List after rotating++");
-        reverselistobj.reverseLinkedList();
+        // reverselistobj.reverseLinkedListIterative();
+        // reverselistobj.printLinkedList();
+        
+        reverselistobj.reverseListRecursive(head);
         reverselistobj.printLinkedList();
     }
     
     
-    public void reverseLinkedList(){
+    public void reverseLinkedListIterative(){
         current = head;
         while(current.next!=null){
             //1. Start with the next node
@@ -45,6 +48,29 @@ public class ReverseLinkedList{
       
         head = current;
         current.next = previousNode;
+    }
+    
+    /**
+     * Algorithm for Recursive Reversal
+     * Start with node current as head.
+        1. If current is null, return.
+        2. If current’s next element is null, this means it is
+        the last node, so make this as head because the
+        last node will be the head of reversed list. Return.
+        3. Recursively traverse the list.
+        4. Set current.next.next to current.
+        5. Set current.next to null
+     */
+    
+    public void reverseListRecursive(Node current){
+        if(current == null) return ;
+        if (current.next == null) {
+            head = current;
+            return ;
+        }
+        reverseListRecursive(current.next);
+        current.next.next = current;
+        current.next = null;
     }
     
      public void insertAtEnd(int nodeData){
