@@ -12,7 +12,7 @@ Example: 19 is a happy number
 */
 
 /**
- * Solution:The idea is to use one hash set to record sum of every digit square of every number occurred. 
+ * Solution 1:The idea is to use one hash set to record sum of every digit square of every number occurred. 
  * Once the current sum cannot be added to set, return false; once the current sum equals 1, return true;
  * */
  
@@ -31,5 +31,26 @@ Example: 19 is a happy number
            else n = squaresum;
        }
        return false;
+    }
+}
+
+/**
+ * Solution 2: Only 1 & 7 are happy numbers from 1-9. 
+ * So we check if the value of n is 1 or 7 . If yes, return true else compute the squaresum value as shown below. 
+ */
+ 
+public class Solution { 
+  public boolean isHappy(int n) {
+    if (n <= 0) return false;
+    
+    while (n >= 10) {
+        int sum = 0;
+        while (n != 0) {
+            sum += (n%10)*(n%10);
+            n /= 10;
+        }
+        n = sum;
+    }
+    return n == 1 || n == 7;
     }
 }
