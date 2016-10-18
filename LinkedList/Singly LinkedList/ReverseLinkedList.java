@@ -26,10 +26,10 @@ public class ReverseLinkedList{
         reverselistobj.printLinkedList();
         
         System.out.println("\n\n++List after rotating++");
-        // reverselistobj.reverseLinkedListIterative();
-        // reverselistobj.printLinkedList();
+         reverselistobj.reverseLinkedListIterative();
         
-        reverselistobj.reverseListRecursive(head);
+        
+       // reverselistobj.reverseListRecursive(head);
         reverselistobj.printLinkedList();
     }
     
