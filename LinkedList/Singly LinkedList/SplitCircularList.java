@@ -1,5 +1,5 @@
 /**
- * LOGIC
+ * LOGIC: 
  *  1) Store the mid and last pointers of the circular linked list using tortoise and hare algorithm.
     2) Make the second half circular.
     3) Make the first half circular.
