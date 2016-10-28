@@ -12,7 +12,7 @@ public class BinarySearch{
         int high = a.length-1, low = 0;
         while(high>=low){
             int mid = (low+high)/2;
-            if(a[mid] == value) return mid;
+            if(a[mid] == value) return mid; 
             if(a[mid] > value) high = mid-1;
             if(a[mid] < value) low = mid+1;
         }
