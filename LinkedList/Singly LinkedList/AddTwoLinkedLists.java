@@ -18,7 +18,7 @@ public class AddTwoLinkedLists{
         AddTwoLinkedLists addllobj = new AddTwoLinkedLists();
         addllobj.prepareLists();
         addllobj.addTwoList();
-         
+    
         addllobj.printLinkedList(head3);
     }
     
