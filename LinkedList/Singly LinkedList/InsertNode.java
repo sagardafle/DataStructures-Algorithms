@@ -28,27 +28,27 @@ public class InsertNode {
         /**
          * 1. insertAtEnd adds a node at the end of the LinkedList
         **/
-                insnode.insertAtEnd(10);
-                insnode.insertAtEnd(20);
-                insnode.insertAtEnd(30);
-                insnode.insertAtEnd(40);
-                insnode.printLinkedList();
+                // insnode.insertAtEnd(10);
+                // insnode.insertAtEnd(20);
+                // insnode.insertAtEnd(30);
+                // insnode.insertAtEnd(40);
+                // insnode.printLinkedList();
         
         /**
          * 2. insertAtBegin adds a node at the beginning of the LinkedList
         **/ 
         
-                // insnode.insertAtBegin(10);
-                // insnode.insertAtBegin(20);
-                // insnode.insertAtBegin(30);
-                // insnode.insertAtBegin(40);
-                // insnode.printLinkedList();
+                insnode.insertAtBegin(10);
+                insnode.insertAtBegin(20);
+                insnode.insertAtBegin(30);
+                insnode.insertAtBegin(40);
+                insnode.printLinkedList();
                 
         /**
          * 3. insertAtIndex(data,index) add a node at the specified index 
          */
-              insnode.insertAtIndex(100,3);
-              insnode.printLinkedList();
+            //   insnode.insertAtIndex(100,3);
+            //   insnode.printLinkedList();
     }
     
     public void insertAtEnd(int nodeData){
