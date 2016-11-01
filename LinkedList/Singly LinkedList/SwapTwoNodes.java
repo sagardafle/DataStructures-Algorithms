@@ -36,35 +36,45 @@ class SwapTwoNodes
        changing links */
     public void swapNodes(int x, int y)
     {
-        Node currX = head;
-        Node currY = head;
-        Node curr = head;
-        while(currX.data != x){
+        // Nothing to do if x and y are same
+        if (x == y) return;
+ 
+        // Search for x (keep track of prevX and CurrX)
+        Node prevX = null, currX = head;
+        while (currX != null && currX.data != x)
+        {
+            prevX = currX;
             currX = currX.next;
         }
-        System.out.println("\nCurrX "+currX.data);
-        
-        while(currY.data != y){
+ 
+        // Search for y (keep track of prevY and currY)
+        Node prevY = null, currY = head;
+        while (currY != null && currY.data != y)
+        {
+            prevY = currY;
             currY = currY.next;
         }
-        System.out.println("CurrY "+currY.data);
-        
-        while(curr.next!=currX){
-            curr = curr.next;
-        }
-         
-       
-       Node curxnext = currY.next;   
-       currY.next = curr.next.next;
-       curr.next = currY;
-       curr =  curr.next.next;
-       
-       while(curr.next!=currY){
-            curr = curr.next;
-        }
-       currX.next = curxnext;
-       curr.next = currX;
-       System.out.println("Curr "+curr.data);
+ 
+        // If either x or y is not present, nothing to do
+        if (currX == null || currY == null)
+            return;
+ 
+        // If x is not head of linked list
+        if (prevX != null)
+            prevX.next = currY;
+        else //make y the new head
+            head = currY;
+ 
+        // If y is not head of linked list
+        if (prevY != null)
+            prevY.next = currX;
+        else // make x the new head
+            head = currX;
+ 
+        // Swap next pointers
+        Node temp = currX.next;
+        currX.next = currY.next;
+        currY.next = temp;
         
     }
  
@@ -111,7 +121,7 @@ class SwapTwoNodes
         System.out.print("\n Linked list before calling swapNodes() ");
         llist.printList();
  
-        llist.swapNodes(3, 6);
+        llist.swapNodes(1, 7);
  
         System.out.print("\n Linked list afterr calling swapNodes() ");
         llist.printList();
