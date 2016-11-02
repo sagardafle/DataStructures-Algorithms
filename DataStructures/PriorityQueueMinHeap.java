@@ -2,11 +2,13 @@
  * A priority queue is an abstract data type where each element has a “priority” assigned to it.
  * So the element with the higher priority is served before the other elements.
  * By default the Priority Queue works as min-Heap.
- * */
+ * Time complexity for the methods offer & poll is O(log(n)) and for the peek() it is Constant time O(1).
+ * The Iterator provided in method iterator() is not guaranteed to traverse the elements of the priority queue in any particular order.
+ **/
 
-import java.util.PriorityQueue;
+import java.util.*;
 public class PriorityQueueMinHeap {
-    PriorityQueue<Integer> pq;
+    static PriorityQueue<Integer> pq;
     
     public PriorityQueueMinHeap(){
         pq = new PriorityQueue<Integer>();
@@ -37,7 +39,9 @@ public class PriorityQueueMinHeap {
 		int[] arrA = { 1, 6, 2, 9, 4, 3, 8 };
 		PriorityQueueMinHeap i = new PriorityQueueMinHeap();
 		i.insert(arrA);
-		i.print();
+		i.print(); //When we print the queue (with System.out) internally iterator is used and hence no guarenty of Sorted output.
+		
+		 
 		System.out.println("Min Element in the Priority Queue: "
 				+ i.extractMin());
 		System.out.println("Min Element in the Priority Queue: "
