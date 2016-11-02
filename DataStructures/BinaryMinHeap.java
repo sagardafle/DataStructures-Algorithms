@@ -47,7 +47,8 @@ public class BinaryMinHeap {
 		return min;
 	}
 	
-	public void sinkDown(int k){int a = mH[k];
+	public void sinkDown(int k){
+		int a = mH[k];
 		int smallest =k;
 		if(2*k<position && mH[smallest]>mH[2*k]){
 			smallest = 2*k;

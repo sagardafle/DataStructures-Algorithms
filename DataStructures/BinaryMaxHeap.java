@@ -107,20 +107,25 @@ public class BinaryMaxHeap{
 	public int extractMax(){
 		int max = mH[1];
 		mH[1]=mH[position-1];
-		mH[position-1]=0;
+		mH[position-1]=-1;
 		position--;		
 		sinkDown(1);
 		return max;
 	}
 	
-	public void sinkDown(int k){int a = mH[k];
-		int smallest =k;
+	public void sinkDown(int k){
+			System.out.println("k =  " + k);
+		int a = mH[k];
+		int smallest = k;
 		if(2*k<position && mH[smallest]<mH[2*k]){
+			System.out.println("Setting smallest to  " + 2*k);
 			smallest = 2*k;
 		}
-		if(2*k+1<position && mH[smallest]<mH[2*k+1]){
+		if(2*k+1<position && mH[smallest]<mH[2*k+1]){ //check if the left child is lesser than right. If yes, we swap will right child.
+				System.out.println("Setting smallest +1 to  " + 2*k+1);
 			smallest = 2*k+1;
 		}
+			System.out.println("smallest =  " + smallest);
 		if(smallest!=k){
 			swap(k,smallest);
 			sinkDown(smallest);
@@ -128,7 +133,7 @@ public class BinaryMaxHeap{
 				
 	}
 	public void swap(int a, int b){
-		//System.out.println("swappinh" + mH[a] + " and " + mH[b]);
+		System.out.println("swapping " + mH[a] + " and " + mH[b]);
 		int temp = mH[a];
 		mH[a] = mH[b];
 		mH[b] = temp;
@@ -145,10 +150,9 @@ public class BinaryMaxHeap{
 		System.out.print("\nMax-Heap : ");
 		m.createHeap(arrA);		
 		m.display();
-		System.out.print("Extract Max :");
-		for(int i=0;i<arrA.length;i++){
-			System.out.print("  " + m.extractMax());
-		}
+		System.out.print("Extract Max :\n");
+		m.extractMax();
+		m.display();
 		
 	}
 	
