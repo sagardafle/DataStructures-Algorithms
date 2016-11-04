@@ -114,7 +114,7 @@ public class BinaryMaxHeap{
 	}
 	
 	public void sinkDown(int k){
-			System.out.println("k =  " + k);
+		System.out.println("k =  " + k);
 		int a = mH[k];
 		int smallest = k;
 		if(2*k<position && mH[smallest]<mH[2*k]){
@@ -141,7 +141,7 @@ public class BinaryMaxHeap{
 	
 	
 	public static void main(String args[]){
-		int arrA [] = {3,2,1,7,8,4,10,16,12};
+		int arrA [] = {3,2,1,7,8,4,16,12,9};
 		System.out.print("Original Array : ");
 		for(int i=0;i<arrA.length;i++){
 			System.out.print("  " + arrA[i]);
