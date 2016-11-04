@@ -106,6 +106,7 @@ public class BinaryMaxHeap{
 	
 	public int extractMax(){
 		int max = mH[1];
+		System.out.println("position++++++++++++++ "+position);
 		mH[1]=mH[position-1];
 		mH[position-1]=-1;
 		position--;		
@@ -115,7 +116,6 @@ public class BinaryMaxHeap{
 	
 	public void sinkDown(int k){
 		System.out.println("k =  " + k);
-		int a = mH[k];
 		int smallest = k;
 		if(2*k<position && mH[smallest]<mH[2*k]){
 			System.out.println("Setting smallest to  " + 2*k);
