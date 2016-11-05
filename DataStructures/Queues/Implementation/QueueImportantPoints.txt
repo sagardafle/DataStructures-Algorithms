@@ -1,0 +1,1 @@
+Offer v/s add: When element can not be added to collection the add method throws an exception and offer doesn't.

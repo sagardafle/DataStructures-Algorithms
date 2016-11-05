@@ -11,7 +11,7 @@
   * LOGIC1 : Using Priority Queue. Make use of the same logic as to merge "K" linked list. https://github.com/sagardafle/DataStructures-Algorithms/blob/master/LeetCode%20Problems/23_MergeKSortedLists.java
   */ 
   /**
-   * LoGIC2 : Run a loop and keep comparing elements one by one.
+   * LOGIC2: : Run a loop and keep comparing elements one by one.
    */ 
 public class Solution {
    
