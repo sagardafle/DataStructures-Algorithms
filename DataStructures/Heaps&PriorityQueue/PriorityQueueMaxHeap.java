@@ -27,39 +27,68 @@ PriorityQueue<Integer> pq;
 		});
 	}
 	
+	/**
+	 * 1. OFFER
+	 */ 
 	public void insert(int[] x) {
 		for (int i = 0; i < x.length; i++) {
 			pq.offer(x[i]);
 		}
 	}
+	
+	/**
+	 * 2. Iterate
+	 */
+	 public void iterator(){
+	 	Iterator it = pq.iterator();
+		   System.out.println ( "Priority queue values are: ");
+		   while (it.hasNext()){
+		   System.out.println ( "Value: "+ it.next()); 
+		    }
+		  }
+	 }
+	
 
+	/**
+	 * 2. POLL (Not that after perfoming the extractmax operation, te heap goes through heapify process internally)
+	 */ 
 	public int extractMax() {
 		return pq.poll();
 	}
 
-	public void display() {
-		System.out.println(pq);
-	}
 
+	/**
+	 * 3. Size
+	 */
+	 
 	public int getSize() {
 		return pq.size();
 	}
 
-	public void print() {
-		System.out.println(pq);
-	}
+
+	
+	/**
+	 * 4. Peek 
+	 */
+	 public int peek(){
+	 	return pq.peek();
+	 }
 
 	public static void main(String[] args) {
 		int[] arrA = { 1, 6, 2, 9, 4, 3, 8 };
 		PriorityQueueMaxHeap i = new PriorityQueueMaxHeap();
 		i.insert(arrA);
+		System.out.println("Priority Queue: ");
 		i.print();
+	
 		System.out.println("Max Element in the Priority Queue: "
 				+ i.extractMax());
 		System.out.println("Max Element in the Priority Queue: "
 				+ i.extractMax());
 		System.out.println("Max Element in the Priority Queue: "
 				+ i.extractMax());
+		System.out.println("Priority Queue PEEK: " + i.peek());
 		System.out.println("Priority Queue Size: " + i.getSize());
+	
 	}
 }
