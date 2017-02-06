@@ -10,7 +10,7 @@
  * Logic 2 (This method is only to detect if there is an intersection point or not.)
  * 1: Traverse list1 . Store pointer to last node of list1.
  * 2: Traverse list2 . Store pointer to last node of list2.
- * 3: If the above two pinters meet, there is an intersection.
+ * 3: If the above two pointers meet, there is an intersection.
  * 
  * 
  * Logic 3 (Use Hashing)
