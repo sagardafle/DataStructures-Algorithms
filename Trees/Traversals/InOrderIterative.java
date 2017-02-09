@@ -50,7 +50,7 @@ class InOrderIterative{
        
        //keep the nodes in the path that are waiting to be visited
         Stack<Node> stack = new Stack<Node>();
-        Node node = root;
+       // Node node = root;
          
         //first node to be visited will be the left one
         while (node != null) {
