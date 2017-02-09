@@ -13,8 +13,8 @@ class PostOrderRecursive{
 	*               7  6  5  4
 	* 			   / \		  \
 	*             8  9       23
-		 *        /
-		 *       223           
+		 *       /
+		 *      223           
 		 */
 		 
 		 postOrder.root = new Node(1);
