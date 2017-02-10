@@ -32,8 +32,6 @@ public class Size {
 		 
 		 int treesize = sizeobj.computesize(sizeobj.root);
 		 System.out.println(" Size:" +treesize);
-		
-		 
     }
     
     int computesize(Node node){ 
@@ -48,6 +46,4 @@ public class Size {
         }
         return 1 + leftheight + rightheight;
     }
-    
-  
 }
