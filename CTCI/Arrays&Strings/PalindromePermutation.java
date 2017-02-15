@@ -10,8 +10,7 @@ public class PalindromePermutation{
      * Except, only ONE SINGLE character can be repeated once(which will be at the center of the combination)
      * 1. Create a mask array of int type. 
      * 2. Increment the value while iterating through string.
-     * 3. Now, loop through this mask array. 
-     * 4. Keep a track of elements with odd value as 'oddcounter'.
+     * 3. Simulaneously, check if the mask value is odd or even. 
      * 5. If 'oddcounter' > 1, that means more than two characters were present only once and string is not palindrome.
      */ 
     
