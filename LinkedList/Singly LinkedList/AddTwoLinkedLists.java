@@ -18,16 +18,13 @@ public class AddTwoLinkedLists{
         AddTwoLinkedLists addllobj = new AddTwoLinkedLists();
         addllobj.prepareLists();
         addllobj.addTwoList();
-    
         addllobj.printLinkedList(head3);
     }
     
     public void prepareLists(){
         head1 = new Node(10);
-        head1.next = new Node(20);
-        head1.next.next = new Node(30);
-        head1.next.next.next = new Node(40);
-        head1.next.next.next.next = new Node(50);   
+
+   
         
         
         head2 = new Node(60);
