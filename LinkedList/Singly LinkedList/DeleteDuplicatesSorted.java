@@ -23,7 +23,7 @@ public class DeleteDuplicatesSorted {
 
     public int nodeLength = 0;
     public Node current = null;
-    public Node head = null;
+    public static Node head = null;
 
     public static void main(String args[]) {
         DeleteDuplicatesSorted delduplicatesortedlist = new DeleteDuplicatesSorted();
@@ -37,23 +37,28 @@ public class DeleteDuplicatesSorted {
         delduplicatesortedlist.addNode(60);
         delduplicatesortedlist.printLL();
         System.out.print("List after deleting duplicates \n");
-        delduplicatesortedlist.removeDuplicates();
+        delduplicatesortedlist.removeDuplicatesIterative();
+        head = delduplicatesortedlist.removeDuplicatesRecursive(head);
         delduplicatesortedlist.printLL();
     }
 
-    public void removeDuplicates() {
-        if (head == null) return;
-        Node next_next = null;
+    public Node removeDuplicatesRecursive(Node head){
+        if(head == null || head.next == null) return head; 
+        head.next = deleteDuplicates(head.next);
+        return head.next.val == head.val ? head.next : head
+    }
+    
+    public Node removeDuplicatesIterative() {
+        if(head == null || head.next == null) return head;
         Node current = head;
-        while (current.next != null) {
-            if (current.data == current.next.data) {
-                next_next = current.next.next;
-                current.next = next_next;
-                nodeLength -= 1;
+        while(current!=null && current.next!=null){
+            if(current.data == current.next.data){
+                current.next = current.next.next;
             } else {
                 current = current.next;
             }
         }
+        return head;
     }
 
 

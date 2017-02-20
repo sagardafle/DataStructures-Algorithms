@@ -1,14 +1,5 @@
-/**
- * http://www.geeksforgeeks.org/remove-duplicates-from-an-unsorted-linked-list/
- * Write a removeDuplicates() function which takes a list and deletes any duplicate nodes from the list. The list is not sorted.
-
-For example if the linked list is 12->11->12->21->41->43->21 then removeDuplicates() should convert the list to 12->11->21->41->43
-
-
-LOGIC :
-*/
 import java.util.*;
-public class DeleteDuplicatesUnSorted {
+public class RemoveDuplicates {
 
     public class Node {
         int data;
@@ -24,8 +15,9 @@ public class DeleteDuplicatesUnSorted {
     public static Node head = null;
 
     public static void main(String args[]) {
-        DeleteDuplicatesUnSorted delduplicateunsortedlist = new DeleteDuplicatesUnSorted();
+        RemoveDuplicates delduplicateunsortedlist = new RemoveDuplicates();
 
+        delduplicateunsortedlist.addNode(12);
         delduplicateunsortedlist.addNode(12);
         delduplicateunsortedlist.addNode(11);
         delduplicateunsortedlist.addNode(12);
@@ -34,63 +26,71 @@ public class DeleteDuplicatesUnSorted {
         delduplicateunsortedlist.addNode(43);
         delduplicateunsortedlist.addNode(21);
         delduplicateunsortedlist.printLL(head);
-        System.out.print("List after deleting duplicates \n");
-        delduplicateunsortedlist.removeDuplicates();
-        //delduplicateunsortedlist.printLL(head);
+        System.out.print("\n List after deleting duplicates \n");
+        //delduplicateunsortedlist.removeDuplicatesUnOptimized();
+        delduplicateunsortedlist.removeDuplicatesOptimized();
+        delduplicateunsortedlist.printLL(head);
     }
-
-    public void removeDuplicates() {
-        if (head == null) return;
-        /**
-         * METHOD -1 : Use two loops. Outer loop to keep a track of the current node. 
-         * Inner loop to compare each node with the outer loop's current node.
-         */
-         
-        //  Node current = head;
-        //  Node reference = current.next;
-        //  Node temp = null;
-        //  while(current.next!=null){
-        //      while(reference!=null){
-        //          if(reference.data == current.data){
-        //              temp = reference;
-        //              current.next = reference.next;
-        //              reference = reference.next;
-        //              nodeLength -= 1;
-        //          } else {
-        //              current.next = reference;
-        //              reference = reference.next;
-        //          }
-        //      }
-        //      current = current.next;
-        //  }
-        
-        //Method-2 : Keep a Hashmap
-         HashMap<Node,Integer> hs = new HashMap<Node,Integer>();
-         Node current = head.next;
-         Node temp = head;
-         while(current!=null){
-             if(!hs.containsKey(current)){
-                 System.out.println("Adding "+current.data);
-                 hs.put(current,1);
-                 temp.next = current;
-             } else {
-                 current = current.next;
-                // nodeLength -=1;
-             }
-            current = current.next;
-         }
-        
-       Iterator it = hs.entrySet().iterator();
-        while (it.hasNext()) {
-            Map.Entry pair = (Map.Entry)it.next();
-            temp.next = (Node) pair.getKey();
-            it.remove(); // avoids a ConcurrentModificationException
+    /**
+     * Very imp point : Inner node pointer(temp) should be always set to outer node pointer(reference) at the beginning of each iteration.
+     */ 
+    public void removeDuplicatesUnOptimized(){
+        Node reference = head;
+        Node temp = null;
+        while(reference!=null){
+            System.out.println("Reference========= "+reference.data);
+            temp = reference;
+            while(temp.next!=null){
+                System.out.println("Temp -  "+temp.data);
+                if(temp.next.data == reference.data){
+                     System.out.println("Removing  "+temp.next.data+ " from the list");
+                    temp.next = temp.next.next;
+                    nodeLength -=1;
+                } else{
+                     temp = temp.next;
+                }
+            }
+            reference = reference.next;
         }
-        printLL(temp);
-        
     }
-
-
+    
+    /**
+     * LOGIC:   1. Create a Hash Table.Add the head data to it.
+                2. Take two pointers, prevNode and CurrNode.
+                3. PrevNode will point to the head of the linked list and currNode will point to the head.next.
+                4. Now navigate through the linked list.
+                5. Check every node data is present in the HashTable.
+                6. if yes then delete that node using prevNode and currNode.
+                7. If No, then insert that node data into the linked list
+     */
+     
+    public void removeDuplicatesOptimized(){
+         if(head==null){
+            return ;
+        }
+        HashSet<Integer> ht = new HashSet<Integer>();
+        Node prevNode = head;
+        Node currNode = head.next;
+       
+        ht.add(head.data); // add the first element as it is to the hashset.
+        while(currNode!=null){
+            int data = currNode.data;
+            if(ht.contains(data)){
+                prevNode.next = currNode.next;
+                currNode = currNode.next;
+            }else{
+                ht.add(data);
+                prevNode = currNode;
+                currNode = currNode.next;
+            }
+        }
+    }
+        
+    //   for (Integer val : hs) {
+    //         System.out.print(val+" -> ");
+    //     }
+    
+    
     public void addNode(int newData) {
 
         Node newNode = new Node(newData);
@@ -115,6 +115,4 @@ public class DeleteDuplicatesUnSorted {
         }
         System.out.println("\n NodeLength: " + nodeLength);
     }
-
-
 }
