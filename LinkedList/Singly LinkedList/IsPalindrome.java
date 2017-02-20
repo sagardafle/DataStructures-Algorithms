@@ -1,5 +1,5 @@
 /**
- * LOGIC : 
+ * LOGIC : O(n) time and O(1) extra space.
  * 1. Divide the list into 2 halves.
  *    1.1 Traverse using slow-fast logic ( to find median)
  * 2. Set slow.next as the secondhead for the 2nd list. 
