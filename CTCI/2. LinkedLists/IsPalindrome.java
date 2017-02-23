@@ -33,7 +33,9 @@ public class IsPalindrome{
         // head.next.next.next.next = new Node(20);
         // head.next.next.next.next.next = new Node(10);
        
-        boolean ispalindromelist = palindromelist.checkIfPalindromeIterative();
+        // boolean ispalindromelist = palindromelist.checkIfPalindromeIterative();
+        // System.out.print(ispalindromelist);
+         boolean ispalindromelist = palindromelist.checkIfPalindromeRecursive(head);
         System.out.print(ispalindromelist);
     }
     
@@ -56,5 +58,27 @@ public class IsPalindrome{
             slowptr = slowptr.next;
         }
         return true;
+    }
+    
+/**
+ * LOGIC : 
+ * 1. Call the function with head. 
+ * 2. If head is null, return true. 
+ * 3. Else recursively call the function passing head.next till we reach the end of the list.
+ * 4. Once we reach end, we compare the current node with head. 
+ *    4.1 If both are equal , we move head to head.next.
+ *    4.2 Return true. 
+ */
+public boolean checkIfPalindromeRecursive(Node current){
+     
+		if(current==null){
+			return true;
+		}
+		boolean result = checkIfPalindromeRecursive(current.next);
+		if(result==true && current.data==head.data){
+			head = head.next;
+			return true;
+		}
+		return false;
     }
 }
