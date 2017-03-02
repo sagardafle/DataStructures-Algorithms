@@ -38,7 +38,6 @@ public class Solution {
                     while(j<k && nums[k] == nums[k+1]) k--; //avoid duplicates
                 } else if(sum>0) k--;
                     else j++;
-                
             }
         }
         return result;

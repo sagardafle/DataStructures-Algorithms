@@ -25,10 +25,11 @@ public class DelteNodeSinglePointer{
         deletenode.deletenodewithsinglepointer(head.next.next.next); //40
         deletenode.printLL(head);
     }
-    
+    /**
+     * Limitation : We cannot delete the last node in the list. 
+     */ 
      public void deletenodewithsinglepointer(Node n) {
          if(n==null) return;
-         Node next = n.next;
          n.data = n.next.data;
          n.next = n.next.next;
      }
