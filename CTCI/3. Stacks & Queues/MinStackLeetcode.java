@@ -21,7 +21,7 @@ class MinStackLeetcode {
     public void push(int x) {
         // Whenever you add a new value and if it is a new min, make sure you add the previous min as well.
         if(x <= min){          
-            stack.push(min);
+            stack.push(min); //push the previous min too,so that while pop we have the previous min at top.
             min=x;
         }
             stack.push(x);
