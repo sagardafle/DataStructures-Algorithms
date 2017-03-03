@@ -1,3 +1,10 @@
+/**
+ * LOGIC: 
+ * 1. Divide the array into sizes n/k.
+ * 2. Fix the slots for different stacks, i.e., use arr[0] to arr[n/k-1] for first stack, and arr[n/k] to arr[2n/k-1].
+ * 3. Problem : Inefficient use of array space. A stack push operation may result in stack overflow even if there is space available in arr[].
+ */
+ 
 class KFixedSizeStacks{
     static int k;
     int stacksize;
@@ -37,7 +44,7 @@ class KFixedSizeStacks{
     KFixedSizeStacks(int stacksize){
         this.stacksize = stacksize;
         values = new int[k*stacksize]; // to hold the list of all the values in the stack.
-        sizes = new int[k]; // to hold the sizes of each stack
+        sizes = new int[k]; // to hold the sizes of each stack.
     }
     
     /**
