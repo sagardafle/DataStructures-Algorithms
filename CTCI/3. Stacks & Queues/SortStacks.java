@@ -29,7 +29,7 @@ class SortStacks{
         while(!original.isEmpty()){
             int temp = (int) original.pop();
            while(!sorted.isEmpty() && sorted.peek() > temp){
-               original.push(sorted.pop());
+               original.push(sorted.pop()); //Push the higher value back to original stack.
            }
            sorted.push(temp);
         }
