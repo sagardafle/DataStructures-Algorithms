@@ -2,6 +2,8 @@
  * Source: http://codereview.stackexchange.com/questions/73301/implementing-a-stack-using-a-simple-array-dynamic-array-and-linked-list
 /**
  * Implement stack using array.
+ * Limitation: The max size of the array needs to be specified on prior basis. 
+ * Pushing new elements onto full stack might raise Stack OverFlow Exception.
  */
 public class StackUsingSimpleArray < Integer > implements Stack < Integer > {
     private int sizeOfStack;
