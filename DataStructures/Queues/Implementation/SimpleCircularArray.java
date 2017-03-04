@@ -2,10 +2,10 @@
  * LOGIC: We add elements circularly and use 2 variables to keep track of front & rear.
  * 1. Why we need circular array instead of normal array?
  *  - If we use a normal array, then after certain set of enqueue/dequeue operations, the indices at front and rear becomes useless. 
- *  - To avoid this, we make use of a cirular array where we treat last and first eleemnts as contiguous.
+ *  - To avoid this, we make use of a cirular array where we treat last and first elements as contiguous.
  *  - So, if we have any free slots at the beginning, the rear pointer can easily go to its next free slot.
  * 
- * 2. Complexity: enqueue().dequeue(),peek() and all other operations are O(1).
+ * 2. Complexity: enqueue(),dequeue(),peek() and all other operations are O(1).
  * 
  * 3. Limitations: We always need to specify the maximum size of the queue on a prior basis. 
  */ 
