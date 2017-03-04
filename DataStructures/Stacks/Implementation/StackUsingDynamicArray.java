@@ -1,4 +1,6 @@
 /**
+ *
+ * Source: http://codereview.stackexchange.com/questions/73301/implementing-a-stack-using-a-simple-array-dynamic-array-and-linked-list
  * Dynamic array implementation.
  * LOGIC: We make use of "Array Doubling technique". 
  * If the array is full, we create a new array of twice the size of original array. 
