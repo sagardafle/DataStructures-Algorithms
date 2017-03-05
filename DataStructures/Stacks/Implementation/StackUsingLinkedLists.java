@@ -1,3 +1,6 @@
+/**
+ * Source: http://codereview.stackexchange.com/questions/73301/implementing-a-stack-using-a-simple-array-dynamic-array-and-linked-list
+ */ 
 import java.util.*;
 class Node < Integer > {
     int data;
