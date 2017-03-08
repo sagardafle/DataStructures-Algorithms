@@ -25,7 +25,7 @@ public class ReverseStack{
             return;
         }
         int temp= (int) s.pop();
-        insertAtBottom(s,data);
+        insertAtBottom(s,data); 
         s.push(temp);
     }
     

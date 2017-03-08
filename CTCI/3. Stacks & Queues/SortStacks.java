@@ -16,22 +16,44 @@ class SortStacks{
     static Stack<Integer> sorted = new Stack<>();
     public static void main(String[] args){
         SortStacks sort = new SortStacks();
-        original.push(13);
-        original.push(33);
+        original.push(1);
         original.push(2);
-        original.push(6);
+        original.push(3);
+        original.push(4);
+        original.push(5);
         System.out.println("Original Stack: "+original);
-        sort.sortUsingOneOnlyStack(original);
+       // sort.sortUsingOneOnlyStack(original);
+        Stack<Integer> sorted = sort.sortStackRecursively(original);
         System.out.println("Sorted Stack: "+sorted);
     }
     
     public void sortUsingOneOnlyStack(Stack original){
         while(!original.isEmpty()){
             int temp = (int) original.pop();
-           while(!sorted.isEmpty() && sorted.peek() > temp){
+           while(!sorted.isEmpty() && sorted.peek() > temp){ 
                original.push(sorted.pop()); //Push the higher value back to original stack.
            }
            sorted.push(temp);
         }
+    }
+    
+    
+    public static Stack sortStackRecursively(Stack s){
+          if(s.isEmpty()) return s;
+          int data = (int) s.pop();
+          sortStackRecursively(s);
+          System.out.println("Calling insertAtBottom for element"+data);
+          insertAtBottom(s,data);
+          return s;
+    }
+    
+    public static void insertAtBottom(Stack s, int data){ //same logic as reverse a stack except we compare the values here
+        if(s.isEmpty() ||  data > (int) s.peek()){ 
+            s.push(data);
+            return;
+        }
+        int temp= (int) s.pop();
+        insertAtBottom(s,data); 
+        s.push(temp);
     }
 }
