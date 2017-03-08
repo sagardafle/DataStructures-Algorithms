@@ -5,17 +5,31 @@ class MinStackLeetcode {
     
     public static void main(String[] args){
         MinStackLeetcode minStack = new MinStackLeetcode();
-        minStack.push(-2);
-        minStack.push(0);
-        minStack.push(-3);
+        minStack.push(5);
+        minStack.push(7);
+        minStack.push(2);
+        minStack.push(4);
+        minStack.push(1);
+        minStack.push(9);
         System.out.println("S "+stack);
         System.out.println("Size "+minStack.size());
-        System.out.println(minStack.getMin());   //--> Returns -3.
+        System.out.println("Initial min "+minStack.getMin());   //--> Returns -3.
         minStack.pop();
-        System.out.println("Size "+minStack.size());
-        System.out.println("After 1st pop, min is: "+minStack.getMin()); 
-        minStack.top();      //--> Returns 0.
-        System.out.println(minStack.getMin());   //--> Returns -2.
+        System.out.println("min "+minStack.getMin());   //--> Returns -3.
+        minStack.pop();
+        System.out.println("min "+minStack.getMin());   //--> Returns -3.
+        minStack.pop();
+        System.out.println("min "+minStack.getMin());
+        minStack.pop();
+        System.out.println("min "+minStack.getMin());   //--> Returns -3.
+        minStack.pop();
+        System.out.println("min "+minStack.getMin());   //--> Returns -3.
+        minStack.pop();
+        System.out.println("min "+minStack.getMin());
+        // System.out.println("Size "+minStack.size());
+        // System.out.println("After 1st pop, min is: "+minStack.getMin()); 
+        // minStack.top();      //--> Returns 0.
+        // System.out.println(minStack.getMin());   //--> Returns -2.
     }
     
     public void push(int x) {

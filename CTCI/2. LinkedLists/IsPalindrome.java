@@ -9,9 +9,10 @@ public class IsPalindrome{
             this.next = null;
         }
     }
-    
+    static Node left;
     public static void main(String[] args){
         IsPalindrome palindromelist = new IsPalindrome();
+        
         /**
          * Test case - 1: Odd no of lists.
          */ 
@@ -23,6 +24,7 @@ public class IsPalindrome{
         head.next.next.next.next.next = new Node(20);
         head.next.next.next.next.next.next = new Node(10);
         
+        left = head; //setting node
         /**
          * Test case - 2: Even no of lists.
          */ 
@@ -62,21 +64,21 @@ public class IsPalindrome{
     
 /**
  * LOGIC : 
- * 1. Call the function with head. 
- * 2. If head is null, return true. 
- * 3. Else recursively call the function passing head.next till we reach the end of the list.
- * 4. Once we reach end, we compare the current node with head. 
- *    4.1 If both are equal , we move head to head.next.
+ * 1. Call the function with left, which is head. 
+ * 2. If left is null, return true. 
+ * 3. Else recursively call the function passing head.next(left.next) till we reach the end of the list.
+ * 4. Once we reach end, we compare the right node with left. 
+ *    4.1 If both are equal , we move left to left.next.
  *    4.2 Return true. 
  */
-public boolean checkIfPalindromeRecursive(Node current){
+public boolean checkIfPalindromeRecursive(Node right){
      
-		if(current==null){
+		if(right==null){
 			return true;
 		}
-		boolean result = checkIfPalindromeRecursive(current.next);
-		if(result==true && current.data==head.data){
-			head = head.next;
+		boolean result = checkIfPalindromeRecursive(right.next);
+		if(result==true && right.data==left.data){
+			left = left.next;
 			return true;
 		}
 		return false;

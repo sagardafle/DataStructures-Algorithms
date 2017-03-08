@@ -43,7 +43,7 @@ public class NthPointerFromEnd{
       * LOGIC: 
       * Recurse through the Linked list
         When we reach to the end of the list, base case will return 0
-        Now with each pass­ing back call through stack, add 1 and return.
+        Now with each passing back call through stack, add 1 and return.
         When count hits k, print the value.
 
       */ 
