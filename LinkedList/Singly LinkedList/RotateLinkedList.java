@@ -70,7 +70,7 @@ public class RotateLinkedList {
         System.out.println("Given list");
         llist.printList();
  
-        llist.rotate(3);
+        llist.rotate(2);
  
         System.out.println("Rotated Linked List");
         llist.printList();
