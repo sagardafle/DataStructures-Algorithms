@@ -3,7 +3,7 @@ public class PartitionList {
       int nodeLength=0;
  
     /* Linked list Node*/
-    class Node
+    static class Node
     {
         int data;
         Node next;
@@ -14,22 +14,6 @@ public class PartitionList {
         }
     }
      
-      /*  Given a reference (pointer to pointer) to the head
-        of a list and an int, push a new node on the front
-        of the list. */
-    void push(int new_data)
-    {
-        /* 1 & 2: Allocate the Node &
-                  Put in the data*/
-        Node new_node = new Node(new_data);
- 
-        /* 3. Make next of new Node as head */
-        new_node.next = head;
- 
-        /* 4. Move the head to point to new Node */
-        head = new_node;
-        ++nodeLength;
-    }
     
     public Node partitionAroundWith4pointers(int k){
           Node root = new Node(0);
@@ -54,44 +38,45 @@ public class PartitionList {
     }
     
     public Node partitionAroundWith2pointers(Node node, int k){
-          Node head = node;
+          Node newhead = node;
           Node tail = node;
           
           while(node!=null){
                 Node next = node.next ; //will be used to the continue the loop
                 if(node.data<k){
                       // add the node in front of k
-                      node.next = head;
-                      head = node;
+                      node.next = newhead;
+                      newhead = node;
                 } else {
+                      //add node at tail
                       tail.next = node;
                       tail = node;
                 }
                 node = next;
           }
           tail.next = null; //set the end of list to null
-          return head;
+          return newhead;
     }
     
     public static void main(String args[])
     {
         PartitionList llist = new PartitionList();
-            llist.push(9);
-            llist.push(8);
-            llist.push(3);
-            llist.push(7);
-            llist.push(1);
-            llist.push(4);
-            
+            head = new Node(3);
+            head.next = new Node(5);
+            head.next.next = new Node(8);
+            head.next.next.next = new Node(5);
+            head.next.next.next.next = new Node(10);
+            head.next.next.next.next.next = new Node(2);
+            head.next.next.next.next.next.next = new Node(1);
  
-        System.out.println("Given list");
-        llist.printList(head);
-        Node newlist = llist.partitionAroundWith4pointers(7);
-        //Node newlist = llist.partitionAroundWith2pointers(head, 7);
-        
+            System.out.println("Given list");
+             llist.printList(head);
+            //Node newlist = llist.partitionAroundWith4pointers(7);
+            Node newlist = llist.partitionAroundWith2pointers(head, 5);
+
  
-        System.out.println("Rotated Linked List");
-        llist.printList(newlist);
+            System.out.println("Rotated Linked List");
+            llist.printList(newlist);
     }
     
     void printList(Node head)
@@ -103,6 +88,5 @@ public class PartitionList {
             temp = temp.next;
         }
         System.out.println();
-        System.out.println("nodeLength "+nodeLength);
     }
 }
