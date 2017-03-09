@@ -8,7 +8,8 @@
  */
  public class MergeSort{
       public static void main(String args[]){
-        int a[] = {-5,2,7,4,10,44,23,41};
+        //int a[] = {-5,2,7,4,10,44,23,41};
+        int a[] = {3,5,2,1};
         MergeSort  mergeobj = new MergeSort();
         System.out.println("\n=============UnSorted array=============");
          mergeobj.printarray(a);
@@ -18,7 +19,7 @@
       }
       
       public void mergesort(int[] array, int low, int high){
-         
+         System.out.println("Merge sort called for low: "+low+", high: "+high);
          if(low<high){ // we will do sorting iff the arraysize is greater than 1. In this case, if low<high. 
              int mid = (low+high)/2;
              
@@ -28,7 +29,7 @@
              //Recursively call the mergesort function
              mergesort(array,mid+1,high); //sorting the right half.
              
-             System.out.println("Performing merge for: low="+low+" mid="+mid+" high="+high);
+             System.out.println("=======Performing merge for: low="+low+" mid="+mid+" high="+high);
              merge(array,low,mid,high); //The Conquer step.
          }
       }
