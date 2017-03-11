@@ -6,7 +6,7 @@ class Node {
             this.next = null;
         }
     }
-public class SumListsOriginal {
+public class SumListsForward {
     
     static Node l1, l2 ,newhead;
     static int carry = 0;
@@ -21,7 +21,7 @@ public class SumListsOriginal {
         l2.next.next = new Node(7);
         
         newhead = null;
-        SumListsOriginal sumoriginal = new SumListsOriginal();
+        SumListsForward sumoriginal = new SumListsForward();
 
         Node newList = sumoriginal.sumLists(l1, l2);
         sumoriginal.printList(newList);
@@ -63,7 +63,6 @@ public class SumListsOriginal {
                System.out.println("adding "+n1.data+" and "+n2.data);
                nodeval = carry + n1.data +n2.data;
                carry = nodeval/10;
-               System.out.println("Nodeval is==== "+nodeval%10);
                result = new Node(nodeval%10);
                insertBefore(result);
         
