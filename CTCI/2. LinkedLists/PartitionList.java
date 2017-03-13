@@ -61,21 +61,21 @@ public class PartitionList {
     public static void main(String args[])
     {
         PartitionList llist = new PartitionList();
-            head = new Node(3);
-            head.next = new Node(5);
-            head.next.next = new Node(8);
-            head.next.next.next = new Node(5);
-            head.next.next.next.next = new Node(10);
+            head = new Node(1);
+            head.next = new Node(4);
+            head.next.next = new Node(3);
+            head.next.next.next = new Node(2);
+            head.next.next.next.next = new Node(5);
             head.next.next.next.next.next = new Node(2);
-            head.next.next.next.next.next.next = new Node(1);
+            // head.next.next.next.next.next.next = new Node(1);
  
             System.out.println("Given list");
              llist.printList(head);
-            //Node newlist = llist.partitionAroundWith4pointers(7);
-            Node newlist = llist.partitionAroundWith2pointers(head, 5);
+            Node newlist = llist.partitionAroundWith4pointers(3);
+            // Node newlist = llist.partitionAroundWith2pointers(head, 3);
 
  
-            System.out.println("Rotated Linked List");
+            System.out.println("Partitioned Linked List");
             llist.printList(newlist);
     }
     

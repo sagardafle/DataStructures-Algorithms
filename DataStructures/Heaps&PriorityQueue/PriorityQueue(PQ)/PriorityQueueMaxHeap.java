@@ -1,5 +1,6 @@
 /**
- * A priority queue is different from a "normal" queue, because instead of being a "first-in-first-out" data structure, values come out in order by priority. 
+ * A priority queue is different from a "normal" queue, because instead of being a "first-in-first-out" data structure, 
+ * values come out in order by priority. 
  * By default the Priority Queue works as min-Heap. 
  * To implement the max-Heap we need to change the way priority queue works internally by overriding the Comparator.
  * Time complexity for the methods offer & poll is O(log(n)) and for the peek() it is Constant time O(1).
@@ -11,6 +12,7 @@
   */ 
 import java.util.Comparator;
 import java.util.PriorityQueue;
+import java.util.*;
 
 public class PriorityQueueMaxHeap {
 
@@ -43,14 +45,13 @@ PriorityQueue<Integer> pq;
 	 	Iterator it = pq.iterator();
 		   System.out.println ( "Priority queue values are: ");
 		   while (it.hasNext()){
-		   System.out.println ( "Value: "+ it.next()); 
+		   System.out.print(it.next()+" -> "); 
 		    }
-		  }
-	 }
+      }
 	
 
 	/**
-	 * 2. POLL (Not that after perfoming the extractmax operation, te heap goes through heapify process internally)
+	 * 2. POLL (Note that after perfoming the extractmax operation, the heap goes through heapify process internally)
 	 */ 
 	public int extractMax() {
 		return pq.poll();
@@ -79,7 +80,8 @@ PriorityQueue<Integer> pq;
 		PriorityQueueMaxHeap i = new PriorityQueueMaxHeap();
 		i.insert(arrA);
 		System.out.println("Priority Queue: ");
-		i.print();
+		i.iterator();
+		System.out.println();
 	
 		System.out.println("Max Element in the Priority Queue: "
 				+ i.extractMax());

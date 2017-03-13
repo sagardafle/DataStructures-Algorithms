@@ -39,15 +39,18 @@ public class PriorityQueueMinHeap {
 		int[] arrA = { 1, 6, 2, 9, 4, 3, 8 };
 		PriorityQueueMinHeap i = new PriorityQueueMinHeap();
 		i.insert(arrA);
-		i.print(); //When we print the queue (with System.out) internally iterator is used and hence no guarenty of Sorted output.
+		i.print(); //When we print the queue (with System.out) internally iterator is used and hence no guarantee of Sorted output.
 		
-		 
 		System.out.println("Min Element in the Priority Queue: "
 				+ i.extractMin());
-		System.out.println("Min Element in the Priority Queue: "
-				+ i.extractMin());
-		System.out.println("Min Element in the Priority Queue: "
-				+ i.extractMin());
+				i.print();
+		 System.out.println("Peek: "+i.peek());
+		 System.out.println("Peek: "+i.peek());
+// 		
+// 		System.out.println("Min Element in the Priority Queue: "
+// 				+ i.extractMin());
+// 		System.out.println("Min Element in the Priority Queue: "
+// 				+ i.extractMin());
 		System.out.println("Priority Queue Size: " + i.getSize());
 	}
 
