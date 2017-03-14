@@ -1,9 +1,23 @@
 /***
- * 1. Create a queue.
- * 2. Add root to the queue.
- * 3. While q size >0 : 
- *   a. Poll an element from queue.
- *   b. Push its left and right child into queue.
+ *    Create a queue.
+      Push root into the queue.
+      height = 0
+      Loop
+	      nodeCount = size of queue
+        
+        // If number of nodes at this level is 0, return height
+	if nodeCount is 0
+		return Height;
+	else
+		increase Height
+
+        // Remove nodes of this level and add nodes of 
+        // next level
+	while (nodeCount > 0)
+		pop node from front
+		push its children to queue
+		decrease nodeCount
+       // At this point, queue has nodes of next level
  */ 
 import java.util.*;
 public class HeightorDepthIterative{
@@ -15,18 +29,18 @@ public class HeightorDepthIterative{
          
         /**
 		 * 
-		 * 		   		 1 
+		 * 		     1 
 		                / \
-	* 				   2    3
-	*                / \  / \ 
-	*               7  6  5  4
-	* 			   / \		  \
-	*             8  9       23
+	* 			   2    3
+	*                  / \  / \ 
+	*                 7  6  5  4
+	* 		     / \	    \
+	*               8  9       23
 		 *       /
 		 *      223           
 		 */
        
-         obj.root = new Node(1);
+             obj.root = new Node(1);
 		 obj.root.left = new Node(2);
 		 obj.root.right = new Node(3);
 		 obj.root.left.left = new Node(7);
@@ -44,16 +58,33 @@ public class HeightorDepthIterative{
     
     public int heightorDepthIterative(Node node){
         if(node == null) return 0;
-        int height = 0;
+        int height = -1; // cant set to 0, because height = 0 indicates root.
+        
         Queue<Node> q = new LinkedList();
         q.offer(node);
+        
         while(q.size()>0){
-            Node temp = q.poll();
-            if(temp.left!=null || temp.right!=null) {
-                height += 1;
+            int nodeCount = q.size();
+            
+            /*If number of nodes at this level is 0, return height*/
+            if(nodeCount == 0) {
+                  return height;
+            } else {
+                  height++;
             }
-            if(temp.left!=null) q.offer(temp.left);
-            if(temp.right!=null) q.offer(temp.right);
+            
+            /*Remove nodes of this level and add nodes of the next level*/
+            while (nodeCount>0){
+                  /*pop node from front*/
+                  Node temp = q.poll();
+                  
+                  /*Decrease the node count*/
+                  nodeCount--;
+                  
+                  /*push its children to queue*/
+                  if(temp.left!=null) q.offer(temp.left);
+                  if(temp.right!=null) q.offer(temp.right);
+            }
         }
         return height;
     }

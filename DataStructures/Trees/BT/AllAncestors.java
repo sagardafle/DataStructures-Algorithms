@@ -35,11 +35,11 @@ public class AllAncestors {
     }
     
     boolean findAncestors(Node node, Node target){ //23
-        	
         	/* base cases */
 	        if (node == null) {
 	            return false;
 	        }
+	        System.out.println("Processing "+node.key);
 	        
 	        if (node.key == target.key) {
 	            return true;

@@ -19,17 +19,17 @@ public class DeepestNode {
         
         /**
 		 * 
-		 * 		   		 1 
+		 * 		     1 
 		                / \
-	* 				   2    3
-	*                / \  / \ 
-	*               7  6  5  4
-	* 			   / \		  \
-	*             8  9       23
-		 *        /         /
-		 *       223       300 
-		 *                 /
-		 *               400
+	* 			   2    3
+	*                   / \  / \ 
+	*                   7  6  5  4
+	* 			/ \	      \
+	*                8  9         23
+		 *        /            /
+		 *       223         300 
+		 *                  /
+		 *                400
 		 */
 		 
 		 deepestobj.root = new Node(1);
@@ -56,12 +56,13 @@ public class DeepestNode {
     public void deepestNode(Node root, int height, int level){
         if(root == null) return ;
         if(root.left== null && root.right == null){
-            if(level +1 == height){
+            if(1+level == height){
                 System.out.println(root.key);
             }
         }
-        deepestNode(root.left,height, level+1);
-        deepestNode(root.right,height, level+1);
+        /*Increment the level and call the children nodes*/
+        deepestNode(root.left,height, 1+level);
+        deepestNode(root.right,height, 1+level);
     }
     
         public int findHeight(Node root){

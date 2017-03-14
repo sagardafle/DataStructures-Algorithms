@@ -20,6 +20,7 @@ public class BSTfromArray{
     }
     
     public Node createBST (int start, int end, int[] a){
+          System.out.println("Parsing "+start+","+end);
         if(start > end) return null;
         int mid = (start+end)/2;
         Node node = new Node(mid);

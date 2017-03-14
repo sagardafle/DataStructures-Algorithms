@@ -1,3 +1,9 @@
+/**
+ * 1. "The height of a tree is the length of the path from the root to the deepest node in the tree. 
+ *     A (rooted) tree with only a node (the root) has a height of zero." -Wikipedia.
+ * 2. The height of a binary search tree is equal to number of layers - 1.
+ */ 
+
 import java.util.*;
 public class HeightorDepth {
     Node root;
@@ -8,15 +14,15 @@ public class HeightorDepth {
         
         /**
 		 * 
-		 * 		   		 1 
+		 * 		     1 
 		                / \
-	* 				   2    3
-	*                / \  / \ 
-	*               7  6  5  4
-	* 			   / \		  \
-	*             8  9       23
+	* 			   2    3
+	*                   / \  / \ 
+	*                  7  6  5  4
+	* 		      / \	     \
+	*                8  9        23
 		 *        /
-		 *       223           
+		 *      223           
 		 */
 		 
 		 heightorDepthobj.root = new Node(1);
@@ -36,17 +42,7 @@ public class HeightorDepth {
     }
     
     int computeHeightorDepth(Node node){ 
-        if(node == null) return 0;
-        
-            /* compute the depth of each subtree */
-            int lDepth = computeHeightorDepth(node.left);
-            int rDepth = computeHeightorDepth(node.right);
-  
-            /* use the larger one */
-            if (lDepth > rDepth)
-                return (lDepth + 1);
-             else
-                return (rDepth + 1);
-        
+              if (node == null) return -1; // 0 incase we are calculating maximum depth.
+              return 1 + Math.max(computeHeightorDepth(node.left), computeHeightorDepth(node.right));
     }
 }
