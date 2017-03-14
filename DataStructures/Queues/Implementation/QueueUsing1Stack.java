@@ -1,13 +1,11 @@
 /**
  * LOGIC: 
- * 1. ENQUEUE: Push the value normally in stack. 
- * 2. DEQUEUE: 
- *              2.1 Pop the value from the stack.
- *              2.2 If the stack is empty, return value from 2.1
- *                     Else   If stack is not empty, 
- *                            Remove the bottom most value in the stack (This is to be returned as dequeue output).
- *                  
- *              2.3 Push back the value onto the same stack that was popped in 2.1
+      1. enqueue() Operation:
+            Push the element to the Stack.
+      2. deQueue() Operation (Recursion): 
+            2.1 Pop all the elements from Main Stack recursively until Stack item count is equal to 1.
+            2.2 If Stack item count = 1, Pop item from Stack, Print it & Return.
+            2.3 Push all popped element back to Stack as shown below.
  * * 
  */
 import java.util.*;
@@ -21,7 +19,7 @@ class QueueUsing1Stack {
         queuesinglestack.enqueue(400);
         int size = queuesinglestack.mystack.size();
         for (int i = 0; i < size; i++) {
-            System.out.println(" Value removed " + queuesinglestack.dequeue());
+            queuesinglestack.dequeue();
         }
     }
 
@@ -29,15 +27,15 @@ class QueueUsing1Stack {
         mystack.push(val);
     }
 
-    public int dequeue() {
+    public void dequeue() {
 
-        int top = mystack.pop();
-        if (mystack.isEmpty()) {
-            return top;
-        } else {
-            int result = mystack.remove(0);
-            mystack.push(top);
-            return result;
+        if (mystack.size() == 1) {
+            System.out.println(mystack.pop());
+            return;
         }
+        int data = mystack.pop();
+        dequeue();
+        mystack.push(data);
     }
+
 }
