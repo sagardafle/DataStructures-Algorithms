@@ -30,7 +30,7 @@ public class AllAncestors {
 		 ancestors.root.left.left.left.left = new Node(223);
 		 
 		 //Find all ancestors
-		 ancestors.findAncestors(ancestors.root, ancestors.root.right.right.right); //23
+		 ancestors.findAncestors(ancestors.root, ancestors.root.left.left.left.left); //23
 		 
     }
     
@@ -40,16 +40,15 @@ public class AllAncestors {
 	            return false;
 	        }
 	        System.out.println("Processing "+node.key);
-	        
-	        if (node.key == target.key) {
-	            return true;
-	        }
+	       
 	        
 	         /* If target is present in either left or right subtree of this node,
 	         then print this node */
-	        if (findAncestors(node.left, target)
-	                || findAncestors(node.right, target)) {
-	            System.out.print(node.key + " ");
+	        if  (node.left == target || 
+	             node.right == target ||
+	             findAncestors(node.left, target) ||
+	             findAncestors(node.right, target)) {
+	             System.out.print(node.key + " ");
 	            return true;
 	        }
 	 
