@@ -57,6 +57,7 @@ public class DeepestNode {
         if(root == null) return ;
         if(root.left== null && root.right == null){
             if(1+level == height){
+                  // This means we have reached the last level which will have the deepest node.
                 System.out.println(root.key);
             }
         }

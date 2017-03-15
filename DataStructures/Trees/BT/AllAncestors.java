@@ -30,7 +30,7 @@ public class AllAncestors {
 		 ancestors.root.left.left.left.left = new Node(223);
 		 
 		 //Find all ancestors
-		 ancestors.findAncestors(ancestors.root, ancestors.root.left.left.left.left); //23
+		 ancestors.findAncestors(ancestors.root, ancestors.root.right.right.right); //23
 		 
     }
     

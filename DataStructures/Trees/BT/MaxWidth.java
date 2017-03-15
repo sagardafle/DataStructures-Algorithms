@@ -49,18 +49,16 @@ public class MaxWidth {
                     width +=1;
                      if(temp.left!=null) q.add(temp.left);
                      if(temp.right!=null) q.add(temp.right);
-                     
               } else {
                     if(q.isEmpty()){
-                          break; 
+                          break;  // we have processed all the nodes
                     } else {
+                          //Current level is processed, move to next level
                           q.add(null); //adding null at the end of queue(which contains all node of next level) to indicate for further levels
                           if(width>maxwidth) maxwidth = width;
                           width = 0;
                     }
               }
-                
-                   
         }
         return maxwidth;
     }

@@ -38,6 +38,7 @@ public class HasPathSum {
     boolean hassumpath(Node node , int sum){ 
         if(node == null) return false;
         
+        /*Check if we have reached the sum and that this is the leaf node*/
         if(node.key == sum && node.left == null && node.right == null) return true;
         
         return (hassumpath(node.left, sum-node.key) || hassumpath (node.right, sum-node.key));
