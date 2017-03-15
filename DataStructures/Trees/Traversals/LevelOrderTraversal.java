@@ -15,18 +15,18 @@ public class LevelOrderTraversal{
          
         /**
 		 * 
-		 * 		   		 1 
+		 * 		     1 
 		                / \
-	* 				   2    3
-	*                / \  / \ 
-	*               7  6  5  4
-	* 			   / \		  \
-	*             8  9       23
-		 *       /
+	* 		         2    3
+	*                   / \  / \ 
+	*                  7  6  5  4
+	* 			/ \	     \
+	*                8  9       23
+		 *        /
 		 *      223           
 		 */
        
-        obj.root = new Node(1);
+             obj.root = new Node(1);
 		 obj.root.left = new Node(2);
 		 obj.root.right = new Node(3);
 		 obj.root.left.left = new Node(7);
