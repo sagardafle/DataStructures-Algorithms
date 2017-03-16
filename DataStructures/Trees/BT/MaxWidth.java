@@ -31,12 +31,11 @@ public class MaxWidth {
 		 widthobj.root.left.left.right = new Node(9);
 		 widthobj.root.right.right.right = new Node(23);
 
-		 //Find max
 		 System.out.println("Max width of tree is: "+widthobj.computemaxwidth(widthobj.root)); 
 		 
     }
     
-    int computemaxwidth(Node node){ 
+    int computemaxwidth(Node node){
         if(node == null) return 0;
         Queue<Node> q = new LinkedList<>();
         q.offer(node);
