@@ -52,19 +52,19 @@ public class ValidBST{
                  );
     }
     
-    public boolean isValidBSTInOrder(Node root){
-          if(root==null) return true;
+//     public boolean isValidBSTInOrder(Node root){
+//           if(root==null) return true;
           
-          if(root.left==null || root.right==null) return false;
-          Node prev = root;
-          if(root.left!=null) {
-                leftsubtree = (prev.key > root.left.key) && isValidBSTInOrder(root.left);
-          }
+//           if(root.left==null || root.right==null) return false;
+//           Node prev = root;
+//           if(root.left!=null) {
+//                 leftsubtree = (prev.key > root.left.key) && isValidBSTInOrder(root.left);
+//           }
           
-          if(root.right!=null){
-                rightsubtree =  (prev.key < root.right.key) && isValidBSTInOrder(root.right);
-          }
+//           if(root.right!=null){
+//                 rightsubtree =  (prev.key < root.right.key) && isValidBSTInOrder(root.right);
+//           }
           
-          return (leftsubtree && rightsubtree);
-    }
+//           return (leftsubtree && rightsubtree);
+//     }
 }
