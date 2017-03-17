@@ -1,5 +1,5 @@
 /**
- * LOGIC: Keep traversing in in order way.
+ * LOGIC: Keep traversing in "in-order" way.
  *        Every time we visit a node, we increment the counter. 
  *        When counter == k, we return the node value.
  * */

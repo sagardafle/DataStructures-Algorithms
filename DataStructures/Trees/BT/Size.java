@@ -1,3 +1,9 @@
+/**
+ * LOGIC: 
+ * 1. Recursively compute the size of left subtree.
+ * 2. Recursively compute the size of right subtree.
+ * 3. Add 1 for the root and values from 1 and 2.
+ */ 
 import java.util.*;
 public class Size {
     Node root;
@@ -36,14 +42,14 @@ public class Size {
     
     int computesize(Node node){ 
         if(node == null) return 0;
-        int leftheight , rightheight;
-        leftheight = rightheight =0;
+        int leftsize , rightsize;
+        leftsize = rightsize =0;
         if(node.left!=null) {
-             leftheight = computesize(node.left);
+             leftsize = computesize(node.left);
         }
         if(node.right!=null) {
-             rightheight = computesize(node.right);
+             rightsize = computesize(node.right);
         }
-        return 1 + leftheight + rightheight;
+        return 1 + leftheight + rightheight; //+1 for the root.
     }
 }

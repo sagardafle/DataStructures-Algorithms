@@ -1,7 +1,11 @@
 /**
-          Logic1: Using Preorder traversal.
-          Logic2: Whenever we encounter the root of T2 in T1(larger tree), we check if the trees T2 and T1 are identical.
-          
+ * Why we can't use in-order traversal ? 
+ * SUppose that the given tree is a BST. In a BST, in-order traversal produces the output in a sorted way. 
+ * So, it is definetly possible that we get the same inorder traversal for 2 diffrent BSTs with same values but diffrent structure.
+          Logic1: 
+          1. We use the preorder traversal.
+          2. Whenever we encounter a null node, we add "X" as as identifier to indicate the end.
+          3. We compare the preorder traversals of T1 and T2.  
  * */
 
 public class SubTree1 {
@@ -12,16 +16,18 @@ public class SubTree1 {
         
         /**
 		 * 
-		 * 	       1                         
-		                / \                       
-	* 		     2    3                    3
-	*                       / \  / \       == >       / \
-	*                      7  6  5  4      == >       5  4
-	* 		  / \	   \                    \ 
-	*                    8  9        23                   23
-		 *                                         
-		 */
-		 
+		 * 	             1
+		 *                /         \
+		 *               2             3                                   3
+		 *            /    \         /   \                               /   \                        
+		 *           7       6       5    4                            5      4
+		 *          / \     / \     / \  /  \                         / \    /  \
+		 *         8    9  X  X     X  X X  23                        X  X   X  23
+		          / \  / \                  / \                                 / \
+		         X  X  X  223               X  X                                X  X
+		                  / \
+		                  X  X
+		                          T1                                        T2
 		 /*Tree-1*/
 		 obj.root1 = new Node(1);
 		 obj.root1.left = new Node(2);
@@ -30,8 +36,8 @@ public class SubTree1 {
 		 obj.root1.left.right = new Node(6);
 		 obj.root1.right.left = new Node(5);
 		 obj.root1.right.right = new Node(4);
-		 obj.root1.left.left.left = new Node(9);
-		 obj.root1.left.left.right = new Node(8);
+		 obj.root1.left.left.left = new Node(8);
+		 obj.root1.left.left.right = new Node(9);
 		 obj.root1.right.right.right = new Node(23);
 		 obj.root1.left.left.right.right = new Node(223);
 

@@ -3,18 +3,12 @@
  * 2. Traverse through tree recursively.
  * 3. When both left & right child of the nodes are null: 
  *    a. Check if (level+1 == height). If yes, then we have reach the leaf node. Print the data. 
- *    b. COntinue traversing the left and right subtree. 
+ *    b. Continue traversing the left and right subtree. 
  */ 
 public class DeepestNode {
-    static Node root, leftdeepestelement, rightdeepestelement , deepestelement;
-   
-    static int leftdepth, rightdepth;
-   
-    
+    static Node root;
     
     public static void main(String args[]){
-         leftdeepestelement = rightdeepestelement = deepestelement = null;
-          leftdepth = rightdepth = 0;
         DeepestNode deepestobj = new DeepestNode();
         
         /**
@@ -56,7 +50,8 @@ public class DeepestNode {
     public void deepestNode(Node root, int height, int level){
         if(root == null) return ;
         if(root.left== null && root.right == null){
-            if(1+level == height){
+              System.out.println("Level "+level);
+            if(level == height){
                   // This means we have reached the last level which will have the deepest node.
                 System.out.println(root.key);
             }
@@ -67,7 +62,7 @@ public class DeepestNode {
     }
     
         public int findHeight(Node root){
-            if(root == null) return 0;
+            if(root == null) return -1;
             return 1 + Math.max(findHeight(root.left), findHeight(root.right));
         }
 }

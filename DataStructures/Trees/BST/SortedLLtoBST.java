@@ -60,6 +60,7 @@ public class SortedLLtoBST{
     }
     
     public Node createBSTHelper(int n){
+          System.out.println("Processing "+n);
           /* Base Case */
         if (n <= 0) 
             return null;
@@ -77,6 +78,7 @@ public class SortedLLtoBST{
         head = head.next;
         
         /* Recursively construct the left subtree */
+        System.out.println("right for=====: "+(n - n/2 - 1));
         Node right = createBSTHelper(n - n/2 - 1);
         
         /*Link the right subtree with the root*/

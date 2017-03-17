@@ -1,3 +1,11 @@
+/**
+ * This is a TOP-DOWN approach.
+ * 1. If root is null, return FALSE.
+ * 2. If root is same as target, return ROOT.
+ * 3. Now recursively check if either left subtree or the right subtree has the target. If yes, PRINT ROOT and return TRUE.
+ */
+ 
+
 public class AllAncestors {
     Node root;
     
@@ -7,7 +15,7 @@ public class AllAncestors {
         /**
 		 * 
 		 * 		     1 
-		                / \
+		                /  \
 	* 			   2    3
 	*                   / \  / \ 
 	*                  7  6  5  4
@@ -35,25 +43,23 @@ public class AllAncestors {
     }
     
     boolean findAncestors(Node node, Node target){ //23
-        	/* base cases */
-	        if (node == null) {
-	            return false;
-	        }
-	        System.out.println("Processing "+node.key);
-	       
-	        
-	         /* If target is present in either left or right subtree of this node,
-	         then print this node */
-	        if  (node.left == target || 
-	             node.right == target ||
-	             findAncestors(node.left, target) ||
-	             findAncestors(node.right, target)) {
-	             System.out.print(node.key + " ");
-	            return true;
-	        }
-	 
-	        /* Else return false */
-	        return false;
-	        
+        	 /* base cases */
+              if (node == null)
+                  return false;
+        
+              if (node.key == target.key)
+                  return true;
+        
+              /* If target is present in either left or right subtree 
+                 of this node, then print this node */
+              if (findAncestors(node.left, target)
+                      || findAncestors(node.right, target)) 
+              {
+                  System.out.print(node.key + " ");
+                  return true;
+              }
+        
+              /* Else return false */
+              return false;
     }
 }

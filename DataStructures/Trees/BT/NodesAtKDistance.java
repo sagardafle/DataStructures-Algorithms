@@ -1,8 +1,7 @@
 /**
- * 1. Calculate the max element from the left subtree.
- * 2. Calculate the max element from the right subtree.
- * 3. Pick the max from 1&2. 
- * 4. Compare the max with rot. 
+ * 1. If root is Null, return 
+ * 2. If K == 0, print root. 
+ * 3. Recursively call the left and right subtree while decrementing the value of K.
  */ 
 public class NodesAtKDistance {
     Node root;

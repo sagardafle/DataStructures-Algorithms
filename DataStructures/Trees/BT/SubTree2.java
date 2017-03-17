@@ -52,10 +52,7 @@ public class SubTree2 {
     boolean isSubTreeUsingIdenticalProperty(Node root1,Node root2){
                  if(root1==null) return false; //big tree cannot be empty.
                  
-                 if((root1.key == root2.key) && areTreesIdentical(root1,root2)){
-                           System.out.println("Check with root "+root2.key);
-                           return true;
-                 }
+                 if((root1.key == root2.key) && areTreesIdentical(root1,root2)) return true;
                  
                  //we need to check for T2's root with every node of of root2.Hence we only change the childrens of root1 and not root2.
                  return isSubTreeUsingIdenticalProperty(root1.left,root2) || isSubTreeUsingIdenticalProperty(root1.right,root2);

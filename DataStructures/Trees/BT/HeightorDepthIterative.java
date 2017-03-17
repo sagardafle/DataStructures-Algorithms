@@ -3,7 +3,7 @@
  * 2. Push root and null. Null indicates end of a particular level.
  * 3. While q.size()> 0: 
  *    3.1 Pop from Queue. (temp) 
- *    3.2 If temp != null, we add the left and right child of those node to the queue.
+ *    3.2 If temp != null, we add the left and right child of temp to the queue.
  *        Else if temp == null, this means we are done with this particular level and 
  *                we are good to move ahead with next level. We INCREMENT height at this step. 
  *    
@@ -66,7 +66,6 @@ public class HeightorDepthIterative {
                 if (q1.isEmpty())
                     break; //indicates the end of level order traversal
                 q1.add(null); //adding null at the end of queue(which contains all node of next level) to indicate for further levels
-                continue;
             }
 
         }

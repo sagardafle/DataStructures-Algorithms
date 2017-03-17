@@ -51,7 +51,7 @@ public class LCA {
         if(right == null) return left;
         
         if(left!=null && right!=null) {
-              System.out.println("THe LCA is: "+root.key);
+              System.out.println("The LCA is: "+root.key);
               return root;
         }
         return null;
