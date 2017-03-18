@@ -28,6 +28,12 @@ public class SubTree1 {
 		                  / \
 		                  X  X
 		                          T1                                        T2
+		                          
+		                          
+       OUTPUT :  tree1path 1 2 7 8 X X 9 X 223 X X 6 X X 3 5 X X 4 X 23 X X       tree2path 3 5 X X 4 X 23 X X 
+         
+          Is Subtree? true
+          */
 		 /*Tree-1*/
 		 obj.root1 = new Node(1);
 		 obj.root1.left = new Node(2);

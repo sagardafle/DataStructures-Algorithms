@@ -42,7 +42,6 @@ public class HasPathSum {
         if(node.key == sum && node.left == null && node.right == null) {
               return true;
         }
-        
         return (hassumpath(node.left, sum-node.key) || hassumpath (node.right, sum-node.key));
     }
 }

@@ -1,8 +1,8 @@
 /**
  * Logic:
  *  1. Keep 2 stacks, let's call them input and output.
-    2. Enqueue: Push the new element onto inbox
-    3. Dequeue: If output is empty, refill it by popping each element from inbox and pushing it onto output
+    2. Enqueue: Push the new element onto input
+    3. Dequeue: If output is empty, refill it by popping each element from input and pushing it onto output
                 Pop and return the top element from output
                 Using this method, each element will be in each stack exactly once - 
                 meaning each element will be pushed twice and popped twice, giving amortized constant time operations.

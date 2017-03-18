@@ -1,4 +1,6 @@
 /**
+ * NOTE: This creates a "MINIMAL TREE". 
+ * As in every iteration, we set the middle of the array as root, we ensure that the no of elements in left and right subtree are equally distributed.
  * 1. Initialize start as 0, end as (length of the array - 1)
 2. Set mid as (start+end)/2
 3. Create a tree node with mid as root (lets call it A).
