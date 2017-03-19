@@ -29,22 +29,13 @@ class SortLinkedList{
         mergeSort(b);
  
         /* answer = merge the two sorted lists together */
-        head = SortedMerge(a,b);
+        head = merge(a,b);
  
         return head;
     }
-    Node getMidNode(Node head){
-        Node slow = head;
-        Node fast = head.next;
+    
  
-        while(fast != null && fast.next != null){
-            slow =slow.next;
-            fast =fast.next.next;
-        }
-        return slow;
-    }
- 
-    Node SortedMerge(Node a,Node b){
+    Node merge(Node a,Node b){
         Node result = null;
         /* Base cases */
         if (a == null) 
@@ -55,16 +46,25 @@ class SortLinkedList{
         /* Pick either a or b, and recur */
         if (a.data <= b.data) {
             result = a;
-            result.next = SortedMerge(a.next, b);
+            result.next = merge(a.next, b);
         }
         else{
             result = b;
-            result.next = SortedMerge(a, b.next);
+            result.next = merge(a, b.next);
         }
         return(result);
 }
  
+ Node getMidNode(Node head){
+        Node slow = head;
+        Node fast = head.next;
  
+        while(fast != null && fast.next != null){
+            slow =slow.next;
+            fast =fast.next.next;
+        }
+        return slow;
+    }
  
     /* Inserts a new Node at front of the list. */
     public void push(int new_data)
@@ -79,6 +79,7 @@ class SortLinkedList{
         /* 4. Move the head to point to new Node */
         head = new_node;
     }
+    
     // prints content of double linked list
     void printList(Node head) {
         Node node = head;

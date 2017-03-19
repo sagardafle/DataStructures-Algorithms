@@ -32,7 +32,7 @@ public class StackUsingMinPrioirtyQueue{
     }
     
      public void insert(long time, int data) {
-			pq.offer(data);
+	  pq.offer(data);
 	}
 	
 	

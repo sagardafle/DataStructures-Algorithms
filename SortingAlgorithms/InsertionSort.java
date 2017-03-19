@@ -1,7 +1,7 @@
 /**
  * LOGIC : The first element in the array is considered sorted.
  * We start with 2nd element in the array called as key
- * Inside a while loop, We compare key with the values on the left (j pointer) and swap if key < list[j]
+ * Inside a while loop, We compare key with the values on the left (j pointer) and swap if key < a[j]
  */ 
 public class InsertionSort{
       public static void main(String args[]){
@@ -14,17 +14,18 @@ public class InsertionSort{
         insertionobj.printarray(a);
       }
     
-    public void sortarray(int[] list){
+    public void sortarray(int[] a){
         int i,j,key,temp;
-        for(i=1;i<list.length;i++){ //i=1 as the very first element is already sorted.
-            key = list[i];
+        for(i=1;i<a.length;i++){ //i=1 as the very first element is already sorted.
+            key = a[i];
             j = i-1;
-            while(j >= 0 && key < list[j]){ // we will swap the values only if the elements of the current key is lesser than the elements on the left.
+            while(j >= 0 && a[j] > key){ // we will swap the values only if 
+                                        //the elements of the current key is lesser than the elements on the left.
             
-            //swap the key value with list[j]
-           temp = list[j];
-           list[j] = list[j+1];
-           list[j+1] = temp;
+            //swap the key value with a[j]
+           temp = a[j];
+           a[j] = a[j+1];
+           a[j+1] = temp;
                 
                 j--;
             }

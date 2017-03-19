@@ -14,7 +14,7 @@ public class QuickFind{
 
         
         System.out.println(isConnected(2,1)); //Symmetric rule. 1=>2 then 2=>1.  
-        System.out.println(isConnected(0,5)); //follows the transitive rule : if 6=>5 & 5=> 0 , 6 => 0 .
+        System.out.println(isConnected(0,6)); //follows the transitive rule : if 6=>5 & 5=> 0 , 6 => 0 .
          
         
     }

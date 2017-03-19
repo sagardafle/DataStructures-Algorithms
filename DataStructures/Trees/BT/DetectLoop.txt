@@ -1,0 +1,4 @@
+How to detect loop in BT ?
+ 
+ - We do a DFS on the tree and while traversal we mark each nodes.
+ - If a marked node is appeared again, a loop is present in the BT.

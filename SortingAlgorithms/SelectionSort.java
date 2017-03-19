@@ -1,4 +1,8 @@
 /**
+ * In-Place algorithm. 
+ * Works well for small files.
+ * O(n2)
+ * 
  * LOGIC : 
  * 1. Start outer loop.
  *  1.1: The first element in the array is considered as the min value.
@@ -18,6 +22,7 @@ public class SelectionSort{
         selobj.printarray(a);
     }
     
+    /* After the end of every INNER LOOP, we fix the position of the miniumum element in the array.*/
     public void sortarray(int[] a){
         int i,j,min,temp;
         for(i=0;i<a.length-1;i++){
