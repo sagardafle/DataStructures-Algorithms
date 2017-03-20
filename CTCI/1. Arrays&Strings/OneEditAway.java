@@ -1,3 +1,7 @@
+/*1.5 One Away: 
+There are three types of edits that can be performed on strings: insert a character, remove a character and replace a character. 
+Given two strings, write a function to check if they are within one edit of each other.
+*/
 public class OneEditAway{
     public static void main(String[] args){
         String s="pales";
@@ -17,9 +21,9 @@ public class OneEditAway{
      * If unmatch is found first time, set the flag to true. 
      * If unmatch is found second time, return false.
      */ 
+     / S: "pales"  T:"bales"
     public static boolean oneReplaceAway(String s, String t){
          System.out.println("One replace away");
-        int[] mask = new int[128];
         boolean foundonediff =false ; 
         for(int i=0;i<s.length();i++){
             if(s.charAt(i) != t.charAt(i)){
@@ -32,7 +36,7 @@ public class OneEditAway{
     
     // S: "png"  T:"apng"
     /** LOGIC:
-     *  1. Traverse through both string simultaneously. 
+     *  1. Declare two index variables for both the strings. Traverse through both string simultaneously. 
      *  2. Compare each character. 
      *  3. If no match is found, increment ONLY the larger string index; else increment both the pointers.
      *  4. If no match is found, more than once, return false.

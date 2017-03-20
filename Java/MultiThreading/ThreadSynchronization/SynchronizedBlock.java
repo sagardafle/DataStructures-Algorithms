@@ -2,7 +2,7 @@
  * If you make a method synchronized, you are locking on the intrinsic lock of the object; 
  * this means there's only one lock so the program can only do one thing at a time, 
  * meaning there is no chance for stageOne and stageTwo to execute simultaneously.
- * In short, even if t1 is running stageOne(), t2 cannot run stageTwo() as t1 has acquired the intrinsic lock on the entire thread object.
+ * In short, even if t1 is running stageOne(), t2 cannot run stageTwo() as t1 has acquired the intrinsic lock on the entire class object.
  * To overcome this limitation, we make use of synchronized blocks.
  */
 import java.util.*;
@@ -25,7 +25,6 @@ public class SynchronizedBlock {
             }
             list1.add(random.nextInt(100));
         }
-
     }
 
     public void stageTwo() {
