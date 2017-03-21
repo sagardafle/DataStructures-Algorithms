@@ -1,6 +1,7 @@
 import java.util.*;
 public class IsPalindrome{
     static Node head;
+    static boolean result;
     static class Node {
         int data;
         Node next;
@@ -16,29 +17,29 @@ public class IsPalindrome{
         /**
          * Test case - 1: Odd no of lists.
          */ 
-        head = new Node(10);
-        head.next = new Node(20);
-        head.next.next = new Node(30);
-        head.next.next.next = new Node(40);
-        head.next.next.next.next = new Node(30);
-        head.next.next.next.next.next = new Node(20);
-        head.next.next.next.next.next.next = new Node(10);
+        // head = new Node(10);
+        // head.next = new Node(20);
+        // head.next.next = new Node(30);
+        // head.next.next.next = new Node(40);
+        // head.next.next.next.next = new Node(30);
+        // head.next.next.next.next.next = new Node(20);
+        // head.next.next.next.next.next.next = new Node(10);
         
         left = head; //setting node
         /**
          * Test case - 2: Even no of lists.
          */ 
-        // head = new Node(10);
-        // head.next = new Node(20);
-        // head.next.next = new Node(30);
-        // head.next.next.next = new Node(30);
-        // head.next.next.next.next = new Node(20);
-        // head.next.next.next.next.next = new Node(10);
+        head = new Node(10);
+        head.next = new Node(20);
+        head.next.next = new Node(30);
+        head.next.next.next = new Node(30);
+        head.next.next.next.next = new Node(20);
+        head.next.next.next.next.next = new Node(10);
        
         // boolean ispalindromelist = palindromelist.checkIfPalindromeIterative();
         // System.out.print(ispalindromelist);
          boolean ispalindromelist = palindromelist.checkIfPalindromeRecursive(head);
-        System.out.print(ispalindromelist);
+        System.out.print("IS LL Palindrome? "+ ispalindromelist);
     }
     
     public boolean checkIfPalindromeIterative(){
@@ -76,8 +77,10 @@ public boolean checkIfPalindromeRecursive(Node right){
 		if(right==null){
 			return true;
 		}
-		boolean result = checkIfPalindromeRecursive(right.next);
-		if(result==true && right.data==left.data){
+		if(right.next!=null) {
+		    result = checkIfPalindromeRecursive(right.next);
+		}
+		if(result && right.data==left.data){
 			left = left.next;
 			return true;
 		}

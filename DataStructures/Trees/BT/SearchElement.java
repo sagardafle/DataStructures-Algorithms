@@ -17,17 +17,17 @@ public class SearchElement {
 		 *       223           
 		 */
 		 
-		 searchobj.root = new Node(1);
-		 searchobj.root.left = new Node(2);
-		 searchobj.root.right = new Node(3);
+		 searchobj.root = new Node(16);
+		 searchobj.root.left = new Node(12);
+		 searchobj.root.right = new Node(20);
 		 searchobj.root.left.left = new Node(7);
-		 searchobj.root.left.right = new Node(6);
-		 searchobj.root.right.left = new Node(5);
-		 searchobj.root.right.right = new Node(4);
-		 searchobj.root.left.left.left = new Node(8);
+		 searchobj.root.left.right = new Node(14);
+		 searchobj.root.right.left = new Node(19);
+		 searchobj.root.right.right = new Node(23);
+		 searchobj.root.left.left.left = new Node(3);
 		 searchobj.root.left.left.right = new Node(9);
-		 searchobj.root.right.right.right = new Node(23);
-		 searchobj.root.left.left.left.left = new Node(223);
+		 searchobj.root.right.right.right = new Node(30);
+		 searchobj.root.left.left.left.left = new Node(2);
 		 
 		 //Find max
 		 boolean isPresent = searchobj.findsearchobj(searchobj.root, searchobj.root.left.left.left.key); //8

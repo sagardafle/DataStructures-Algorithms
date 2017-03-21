@@ -1,3 +1,13 @@
+/*
+ * You have two numbers represented by linked list, where each node contains
+ * a single digit. Digits are stored in reverse order.(1's digit is at the head)
+ * Write a function that adds two such numbers and returns a number in similar
+ * list format.
+ * example:
+ * 7-->1-->6 + 5-->9-->2 = 2-->1-->9
+ * which is (617 + 295  = 912)
+ */
+ 
 class Node {
         int data;
         Node next;
@@ -40,7 +50,7 @@ public class SumListsReverse {
         }
 
         //create new node
-        result =  new Node(value%10); //we will only take the 1st digit of the value
+        result =  new Node(value%10); //we will only take the 2nd digit of the value
 
         /* Recurse */
         if (l1 != null || l2 != null) {

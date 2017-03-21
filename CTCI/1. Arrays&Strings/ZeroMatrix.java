@@ -1,3 +1,6 @@
+/*1.8 Zero Matrix: Write an algorithm such that if an element in an MxN matrix is 0, 
+its entire row and column are set to 0.*/
+
 class ZeroMatrix
 {
   public static void main(String[] args)
@@ -16,8 +19,9 @@ class ZeroMatrix
   */
   
  public static void optimizedtime(int[][] a){
-     int rows = a[0].length;  // 4
-     int cols = a.length;     // 3
+    /*Array[number of arrays][how many elements in each of those arrays]*/           
+     int rows = a.length;  // 4
+     int cols = a[0].length;     // 4
      boolean[] rowarr = new boolean[rows];
      boolean[] colarr = new boolean[cols];
      for(int i=0;i<rows;i++){

@@ -48,7 +48,7 @@ public class SortedLLtoBST{
 	* 			/ \	        \
 	*                3  9           30
 		 *        /
-		 *      2          
+		 *       2          
 		 */
 		 
     }
@@ -78,7 +78,6 @@ public class SortedLLtoBST{
         head = head.next;
         
         /* Recursively construct the left subtree */
-        System.out.println("right for=====: "+(n - n/2 - 1));
         Node right = createBSTHelper(n - n/2 - 1);
         
         /*Link the right subtree with the root*/

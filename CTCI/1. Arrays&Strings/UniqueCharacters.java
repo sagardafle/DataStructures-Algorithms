@@ -1,3 +1,13 @@
+/*1.1 Is Unique: Implement an algorithm to determine if a string has all unique characters. 
+What if you cannot use additional data structures?
+*/
+
+/** LOGIC: 
+ * 1. Keep a BOOLEAN mask array. 
+ * 2. As we traverse through the string, we set the respective character's mask to true.
+ * 3. If the character has already been set true, we return false.
+ * 
+ */ 
 public class UniqueCharacters{
     public static void main(String[] args){
         String s = "sagrdfle";

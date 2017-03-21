@@ -1,5 +1,5 @@
 import java.util.*;
-public class RemoveDuplicates {
+public class DeleteDuplicatesUnSorted {
 
     public class Node {
         int data;
@@ -15,7 +15,7 @@ public class RemoveDuplicates {
     public static Node head = null;
 
     public static void main(String args[]) {
-        RemoveDuplicates delduplicateunsortedlist = new RemoveDuplicates();
+        DeleteDuplicatesUnSorted delduplicateunsortedlist = new DeleteDuplicatesUnSorted();
 
         delduplicateunsortedlist.addNode(12);
         delduplicateunsortedlist.addNode(12);
@@ -27,24 +27,23 @@ public class RemoveDuplicates {
         delduplicateunsortedlist.addNode(21);
         delduplicateunsortedlist.printLL(head);
         System.out.print("\n List after deleting duplicates \n");
-        //delduplicateunsortedlist.removeDuplicatesUnOptimized();
-        delduplicateunsortedlist.removeDuplicatesOptimized();
+        // delduplicateunsortedlist.DeleteDuplicatesUnSortedOptimized();
+        delduplicateunsortedlist.DeleteDuplicatesUnSortedUnOptimized();
         delduplicateunsortedlist.printLL(head);
     }
     /**
      * Very imp point : Inner node pointer(temp) should be always set to outer node pointer(reference) at the beginning of each iteration.
      */ 
-    public void removeDuplicatesUnOptimized(){
+      /* Time Complexity: O(n2) */
+    public void DeleteDuplicatesUnSortedUnOptimized(){
         Node reference = head;
         Node temp = null;
         while(reference!=null){
-            System.out.println("Reference========= "+reference.data);
             temp = reference;
             while(temp.next!=null){
-                System.out.println("Temp -  "+temp.data);
-                if(temp.next.data == reference.data){
-                     System.out.println("Removing  "+temp.next.data+ " from the list");
-                    temp.next = temp.next.next;
+                if(reference.data == temp.next.data){
+                    temp.next = temp.next.next; //REMEMBER: We dont incrememnt the temp's value incase a duplicate is found. 
+                                                //Temp will still be same as reference pointer.
                     nodeLength -=1;
                 } else{
                      temp = temp.next;
@@ -63,8 +62,8 @@ public class RemoveDuplicates {
                 6. if yes then delete that node using prevNode and currNode.
                 7. If No, then insert that node data into the linked list
      */
-     
-    public void removeDuplicatesOptimized(){
+     /* Time Complexity: O(n) , Space Complexity: O(n) for the HT.*/
+    public void DeleteDuplicatesUnSortedOptimized(){
          if(head==null){
             return ;
         }
@@ -74,23 +73,17 @@ public class RemoveDuplicates {
        
         ht.add(head.data); // add the first element as it is to the hashset.
         while(currNode!=null){
-            int data = currNode.data;
-            if(ht.contains(data)){
+            if(ht.contains(currNode.data)){
                 prevNode.next = currNode.next;
-                currNode = currNode.next;
+                nodeLength -=1;
             }else{
-                ht.add(data);
+                ht.add(currNode.data);
                 prevNode = currNode;
-                currNode = currNode.next;
             }
+            currNode = currNode.next; //continue the loop 
         }
     }
-        
-    //   for (Integer val : hs) {
-    //         System.out.print(val+" -> ");
-    //     }
-    
-    
+
     public void addNode(int newData) {
 
         Node newNode = new Node(newData);

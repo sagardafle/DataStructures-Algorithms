@@ -50,6 +50,6 @@ public class Size {
         if(node.right!=null) {
              rightsize = computesize(node.right);
         }
-        return 1 + leftheight + rightheight; //+1 for the root.
+        return 1 + leftsize + rightsize; //+1 for the root.
     }
 }

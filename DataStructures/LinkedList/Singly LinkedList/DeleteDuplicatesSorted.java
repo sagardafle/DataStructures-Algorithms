@@ -37,15 +37,15 @@ public class DeleteDuplicatesSorted {
         delduplicatesortedlist.addNode(60);
         delduplicatesortedlist.printLL();
         System.out.print("List after deleting duplicates \n");
-        delduplicatesortedlist.removeDuplicatesIterative();
+        // delduplicatesortedlist.removeDuplicatesIterative();
         head = delduplicatesortedlist.removeDuplicatesRecursive(head);
         delduplicatesortedlist.printLL();
     }
 
     public Node removeDuplicatesRecursive(Node head){
         if(head == null || head.next == null) return head; 
-        head.next = deleteDuplicates(head.next);
-        return head.next.val == head.val ? head.next : head
+        head.next = removeDuplicatesRecursive(head.next);
+        return head.next.data == head.data ? head.next : head ;
     }
     
     public Node removeDuplicatesIterative() {
@@ -53,7 +53,7 @@ public class DeleteDuplicatesSorted {
         Node current = head;
         while(current!=null && current.next!=null){
             if(current.data == current.next.data){
-                current.next = current.next.next;
+                current.next = current.next.next; //REMEMBER: We dont incrememnt the current's value incase a duplicate is found.
             } else {
                 current = current.next;
             }

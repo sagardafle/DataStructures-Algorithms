@@ -27,7 +27,7 @@ class ReverseKElements{
                   q.add(s.pop());
             }
             
-            /*Wrap aroound rest of the elements*/
+            /*Wrap around rest of the elements*/
             for(int i=0;i<q.size()-k;i++){
                   q.add(q.remove());
             }

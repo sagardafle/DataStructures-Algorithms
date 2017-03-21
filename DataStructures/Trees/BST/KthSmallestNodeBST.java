@@ -20,8 +20,8 @@ public class KthSmallestNodeBST{
 	*                     7  14  19  23
 	* 		 / \	     \
 	*                   3  9           30
-		 *        /
-		 *      2          
+		 *       /
+		 *       2          
 		 */
        
                      obj.root = new Node(16);
@@ -46,10 +46,10 @@ public class KthSmallestNodeBST{
                    getKthSmallestNode(root.left, k);
                        if (counter == k) {
                            System.out.println(root.key);
-                           counter++;
                            return;
-                       } else counter++;
-
+                       }
+                    
+                    counter++;
                    getKthSmallestNode(root.right, k);
                } 
            }

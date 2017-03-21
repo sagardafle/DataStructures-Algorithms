@@ -16,7 +16,7 @@
  * Logic 3 (Use Hashing)
     Basically we need to find common node of two linked lists. So we hash all nodes of first list and then check second list.
    1: Create an empty hash table such that node address is used as key and a binary value present/absent is used as value.
-   2: Traverse the first linked list and insert all nodes’ addresses in hash table.  
+   2: Traverse the first linked list and insert all nodes addresses in hash table.  
    3: Traverse the second list. For every node check if it is present in hash table. If we find a node in hash table, return the node.
  * 
  * 

@@ -11,7 +11,7 @@ class MinStackLeetcode {
         minStack.push(4);
         minStack.push(1);
         minStack.push(9);
-        System.out.println("S "+stack);
+        System.out.println("Initial Stack: "+stack);
         System.out.println("Size "+minStack.size());
         System.out.println("Initial min "+minStack.getMin());   //--> Returns -3.
         minStack.pop();
@@ -26,10 +26,6 @@ class MinStackLeetcode {
         System.out.println("min "+minStack.getMin());   //--> Returns -3.
         minStack.pop();
         System.out.println("min "+minStack.getMin());
-        // System.out.println("Size "+minStack.size());
-        // System.out.println("After 1st pop, min is: "+minStack.getMin()); 
-        // minStack.top();      //--> Returns 0.
-        // System.out.println(minStack.getMin());   //--> Returns -2.
     }
     
     public void push(int x) {
@@ -45,8 +41,8 @@ class MinStackLeetcode {
     public void pop() {
         // if pop operation could result in the changing of the current minimum value, 
         // pop twice and change the current minimum value to the last minimum value.
+        
         if(stack.pop() == min) {
-            System.out.println("S "+stack);
             min=stack.pop();
         }
     }

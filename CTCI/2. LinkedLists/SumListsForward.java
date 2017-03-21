@@ -1,3 +1,14 @@
+/**
+ * You have two numbers represented by linked list, where each node contains
+ * a single digit. Digits are stored in reverse order.(1's digit is at the head)
+ * Write a function that adds two such numbers and returns a number in similar
+ * list format.
+ * example:
+ * 7-->1-->6 + 5-->9-->2 = 2-->1-->9
+ * which is (617 + 295  = 912)
+ * What if digits are not stored in reverse order(i.e 1's digit is at tail)
+ * (6--1-->7) + (2-->9-->5) = (9-->1-->2)
+ */ 
 class Node {
         int data;
         Node next;

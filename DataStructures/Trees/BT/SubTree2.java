@@ -62,9 +62,11 @@ public class SubTree2 {
           public boolean areTreesIdentical(Node node1, Node root2) {
                if(root1 == null && root2 == null) return true;
                else if(root1 == null || root2 == null) return false;
-               else if  (root1.key != root2.key) return false;
+               else if  (root1.key == root2.key) return true;
                else {
-                       return areTreesIdentical(root1.left,root2.left) && areTreesIdentical(root1.right,root2.right);
+                       return root1.key == root2.key
+                       && areTreesIdentical(root1.left,root2.left) 
+                       && areTreesIdentical(root1.right,root2.right);
                }
           }
           

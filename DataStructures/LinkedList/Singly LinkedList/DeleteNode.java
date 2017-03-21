@@ -31,51 +31,44 @@ public class DeleteNode{
         // System.out.println("\n\n==After deleting from front==");
         // delnode.printLinkedList();
         
-        // delnode.deletefromRear();
-        // System.out.println("\n\n==After deleting from rear==");
-        // delnode.printLinkedList();
+        delnode.deletefromRear();
+        System.out.println("\n\n==After deleting from rear==");
+        delnode.printLinkedList();
         
         // delnode.deletefromIndex(3);
         // System.out.println("\n\n==After deleting from specified index==");
         // delnode.printLinkedList();
         
-        delnode.deleteFromMiddle();
-        System.out.println("\n\n==After deleting from middle ==");
-        delnode.printLinkedList();
+        // delnode.deleteFromMiddle();
+        // System.out.println("\n\n==After deleting from middle ==");
+        // delnode.printLinkedList();
         
     }
     
     public void deletefromFront(){
-        if(nodeLength == 0) System.out.println("Nothing to delete as the list is empty");
-        Node temp = head;
-        head = temp.next;
-        temp.next = null;
+        if(head == null) System.out.println("Nothing to delete as the list is empty");
+        head = head.next;
         nodeLength --;
     }
     
     public void deletefromRear(){
-        if(nodeLength == 0) System.out.println("Nothing to delete as the list is empty");
-        else if(nodeLength ==1) head = null;
-        else{
-             current = head;
-        while(current.next.next!=null){
-            current = current.next;
-        }
-        current.next = null;
-        }
-        nodeLength--;
+       if(head == null) System.out.println("Nothing to delete as the list is empty");
+       Node current = head;
+       while(current!=null && current.next.next!=null){
+           current = current.next;
+       }
+       current.next = current.next.next;
     }
     
     public void deletefromIndex(int removalindex){
         if(removalindex > nodeLength) return;
-        int counter =1;
+        int counter = 1;
         current = head;
         while(current.next!=null && counter != removalindex-1){
             current = current.next;
             counter++;
         }
-        Node nodeToBeRemoved = current.next;
-        current.next = nodeToBeRemoved.next;
+        current.next = current.next.next;
         nodeLength--;
     }
     

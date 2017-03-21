@@ -16,7 +16,7 @@ public class StringCompression{
              if(i+1>=s.length() || s.charAt(i) != s.charAt(i+1)){
                  compressedString.append(s.charAt(i));
                  compressedString.append(count);
-                 count = 1;
+                 count = 1; //RESET the count after appending one character and its count.
              } else {
                  count +=1;
              }
@@ -44,7 +44,7 @@ public class StringCompression{
             } else {
                compressedString.append(String.valueOf(prev)).append(count);
                prev = s.charAt(i);
-               count = 1;
+               count = 1; 
             }
         }
        compressedString.append(String.valueOf(prev)).append(count); // to add the a3. Last character otherwise will not be added. 

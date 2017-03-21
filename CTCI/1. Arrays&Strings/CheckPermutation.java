@@ -1,5 +1,14 @@
 /*1.2 Check Permutation: Given two strings, write a method to decide if one is a permutation of the other.*/
 
+
+/* Same as Leetcode's Valid Anagram problem */
+/*Given two strings s and t, write a function to determine if t is an anagram of s.
+
+For example,
+s = "anagram", t = "nagaram", return true.
+s = "rat", t = "car", return false.
+*/
+
 import java.util.*;
 public class CheckPermutation{
     public static void main(String[] args){

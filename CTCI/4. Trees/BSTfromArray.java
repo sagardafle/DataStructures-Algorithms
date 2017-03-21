@@ -22,9 +22,10 @@ public class BSTfromArray{
     }
     
     public Node createBST (int start, int end, int[] a){
-          System.out.println("Parsing "+start+","+end);
+        System.out.println("Parsing "+start+","+end);
         if(start > end) return null;
         int mid = (start+end)/2;
+        System.out.println("Creating node ==  "+a[mid]);
         Node node = new Node(mid);
         node.left = createBST(start, mid-1, a);
         node.right = createBST(mid+1,end,a);

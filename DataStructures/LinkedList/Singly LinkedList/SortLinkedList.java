@@ -13,22 +13,24 @@ class SortLinkedList{
     Node head;  // head of list
  
     Node mergeSort(Node head){
+          
         /* Base case -- length 0 or 1 */
         if(head == null || head.next == null){
             return head;
         }
-        //get middle node for Split head into 'a' and 'b' sublists 
+        /*Step-1 : Get the mid of Linked List */
         Node mid = getMidNode(head);
  
+        /*Step-2 : Partition original list. Create two linkedlists. */
         Node a = head;//firstList
         Node b = mid.next;//secondList
         mid.next = null;
  
-        /* Recursively sort the sublists */
+        /* Step:-3: Recursively sort the sublists */
         mergeSort(a);
         mergeSort(b);
  
-        /* answer = merge the two sorted lists together */
+        /* Step-4:  Merge the two sorted lists together */
         head = merge(a,b);
  
         return head;

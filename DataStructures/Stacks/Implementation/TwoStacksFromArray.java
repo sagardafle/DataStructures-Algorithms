@@ -3,8 +3,8 @@ public class TwoStacksFromArray{
     /**
      * LOGIC: 
      * 1. We maintain 2 top pointers (top1,top2) for two respective stacks. 
-     * 2. Initially, top1= -1 & top2= n (n - length of the array)
-     * 3. As we push the elements in respective stack we check if there is a space i.e top2-top1>1
+     * 2. Initially, top1= -1 & top2= n.
+     * 3. As we push the elements in respective stack, we check if there is a space i.e top2-top1>1
      * 4. Increment and Decrement the values of the top pointers while pushing values in stack#1 and stack#2, respectively.
      * 5. Decrement and Increment the values of the top pointers while popping values in stack#1 and stack#2, respectively.
      */ 

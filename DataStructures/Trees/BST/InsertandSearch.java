@@ -37,26 +37,14 @@ public class InsertandSearch{
 		 obj.root.right.right.right = new Node(30);
 		 obj.root.left.left.left.left = new Node(2);
 		 
-		 //Search Element
-		 System.out.println("Element found? "+obj.searchElement(obj.root, 19).key); //19
+		 
 		 obj.preOrder(obj.root);
 		 obj.insertElement(obj.root,34);
 		 System.out.println();
 		 obj.preOrder(obj.root);
     }
     
-    public Node searchElement(Node root, int target){
-        // Base Cases: root is null or key is present at root
-          if (root==null || root.key==target)
-              return root;
-       
-          // val is greater than root's key
-          if (root.key > target)
-              return searchElement(root.left, target);
-       
-          // val is less than root's key
-          return searchElement(root.right, target);
-    }
+
     
     public Node insertElement (Node root, int element){
           if(root == null){

@@ -16,11 +16,11 @@ class SortStacks{
     static Stack<Integer> sorted = new Stack<>();
     public static void main(String[] args){
         SortStacks sort = new SortStacks();
-        original.push(1);
-        original.push(2);
-        original.push(3);
-        original.push(4);
-        original.push(5);
+        original.push(19);
+        original.push(12);
+        original.push(36);
+        original.push(44);
+        original.push(15);
         System.out.println("Original Stack: "+original);
        // sort.sortUsingOneOnlyStack(original);
         Stack<Integer> sorted = sort.sortStackRecursively(original);
@@ -42,7 +42,7 @@ class SortStacks{
           if(s.isEmpty()) return s;
           int data = (int) s.pop();
           sortStackRecursively(s);
-          System.out.println("Calling insertAtBottom for element"+data);
+          System.out.println("Calling insertAtBottom for element "+data);
           insertAtBottom(s,data);
           return s;
     }

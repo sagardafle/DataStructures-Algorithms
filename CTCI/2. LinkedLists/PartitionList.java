@@ -1,14 +1,17 @@
+/*2.4 Partition: Write code to partition a linked list around a value x, 
+                 such that all currents less than x come before all currents greater than or equal to x. 
+                 If x is contained within the list, the values of x only need to be after the elements less than x.
+*/
+
 public class PartitionList {
       static Node head;  // head of list
-      int nodeLength=0;
+      int currentLength=0;
  
     /* Linked list Node*/
-    static class Node
-    {
+    static class Node{
         int data;
         Node next;
-        Node(int d)
-        {
+        Node(int d){
             data = d;
             next = null;
         }
@@ -37,22 +40,22 @@ public class PartitionList {
                   return root.next;
     }
     
-    public Node partitionAroundWith2pointers(Node node, int k){
-          Node newhead = node;
-          Node tail = node;
+    public Node partitionAroundWith2pointers(Node current, int k){
+          Node newhead = current;
+          Node tail = current;
           
-          while(node!=null){
-                Node next = node.next ; //will be used to the continue the loop
-                if(node.data<k){
-                      // add the node in front of k
-                      node.next = newhead;
-                      newhead = node;
+          while(current!=null){
+                Node next = current.next ; //will be used to the continue the loop
+                if(current.data<k){
+                      // add the current in front of k
+                      current.next = newhead;
+                      newhead = current;
                 } else {
-                      //add node at tail
-                      tail.next = node;
-                      tail = node;
+                      //add current at tail
+                      tail.next = current;
+                      tail = current;
                 }
-                node = next;
+                current = next;
           }
           tail.next = null; //set the end of list to null
           return newhead;

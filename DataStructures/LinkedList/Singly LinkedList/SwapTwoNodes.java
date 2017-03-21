@@ -13,7 +13,7 @@ Input:  10->15->12->13->20->14,  x = 10, y = 20
 Output: 20->15->12->13->10->14
 
 LOGIC: 
-1. Traverse through the list till we get the nodex and nodey.
+1. Traverse through the list till we get the node-x and node-y.
 2. Set the positions as required.
 */
  

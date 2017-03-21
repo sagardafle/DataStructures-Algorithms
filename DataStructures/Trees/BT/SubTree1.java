@@ -3,9 +3,9 @@
  * SUppose that the given tree is a BST. In a BST, in-order traversal produces the output in a sorted way. 
  * So, it is definetly possible that we get the same inorder traversal for 2 diffrent BSTs with same values but diffrent structure.
           Logic1: 
-          1. We use the preorder traversal.
+          1. We use the "PREORDER" traversal.
           2. Whenever we encounter a null node, we add "X" as as identifier to indicate the end.
-          3. We compare the preorder traversals of T1 and T2.  
+          3. We compare the "PREORDER" traversals of T1 and T2.  
  * */
 
 public class SubTree1 {
