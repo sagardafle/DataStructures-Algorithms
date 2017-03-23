@@ -59,6 +59,5 @@ class PreOrderIterative{
               s.push(node.left);
           }
       }
-       
     }
 }
