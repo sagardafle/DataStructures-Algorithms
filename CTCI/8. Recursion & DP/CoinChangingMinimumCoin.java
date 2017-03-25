@@ -1,5 +1,12 @@
 /*Source - watch https://youtu.be/NJuKJ8sasGk
          - https://github.com/mission-peace/interview/blob/master/src/com/interview/dynamic/CoinChangingMinimumCoin.java
+
+    Given a total and coins of certain denomination with infinite supply, what is the minimum number
+ *  of coins it takes to form this total.
+ *
+ * Time complexity - O(coins.size * total)
+ * Space complexity - O(coins.size * total)
+ 
 */
 /**
  * Bottom up way of solving this problem.
