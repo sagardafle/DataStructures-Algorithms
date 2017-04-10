@@ -7,9 +7,10 @@
 
 import java.util.*;
 class Processor extends Thread {
-          private boolean running = true;
+          private volatile boolean running = true;
           public void run(){
-                    while(running){
+                    if(!running) System.out.println("running is set to :"+running);
+                    while(running){ 
                               System.out.println("Hello ");
                                try{
                               Thread.sleep(1000);    

@@ -42,14 +42,15 @@ public class IdenticalTrees {
         /*1. both empty */
         if (a == null && b == null)
             return true;
-             
-        /* 2. both non-empty -> compare them */
-        if (a != null && b != null) 
-            return (a.key == b.key //Dont check the values while checking for symmertric trees.
-                    && identicalTrees(a.left, b.left)
+        /*2. either of them is empty */
+             if(a == null || b ==null)
+               return false;
+        /* 3. Node data mismatch */         
+             if(a.key != b.key) 
+              return false;
+
+            return (identicalTrees(a.left, b.left)
                     && identicalTrees(a.right, b.right));
   
-        /* 3. one empty, one not -> false */
-        return false;
     }
 }

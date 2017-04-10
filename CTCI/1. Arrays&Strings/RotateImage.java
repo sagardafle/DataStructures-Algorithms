@@ -16,7 +16,7 @@ public class RotateImage {
 	public static void rotate90Degrees(int[][] image) {
 		
 	
-		int[][] rotatedImage = new int[image.length][image[0].length];
+		int[][] rotatedImage = new int[image.length][image[0].length]; //[R][C]
 	    for(int i=0;i<image.length;i++){
 	            rotatedImage[i][0] = image[image.length-1][i];
 	            rotatedImage[i][1] = image[image.length-2][i];

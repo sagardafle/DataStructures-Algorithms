@@ -7,6 +7,17 @@
   What if the values are not distinct?
 */
 
+/*Logic:
+if A[mid] < mid , we cant be sure whether to go right or left unlike previous example. 
+:et A[3] = 2, A[4] = 2 and A[5] =3 and consider mid = 5. 
+Now, we are sure that '4' cannot be magic since A[4] HAS TO BE less than or equal to A[5].
+So, we can easily skip A[4] while checking left part of the array. 
+This skipping is determined as:
+
+          - Left part : leftIndex = Math.min(mid-1,a[mid]); //   let mid = 5      Math.min(3,4) .. we search from 0..3
+          - Right part : rightIndex = Mat.max(mid+1,a[mid]); //                   Math.max(6,5) .. we search from 6..n-1
+
+*/
 class MagicIndexNonDistinct{
           public static void main(String[] args){
                     MagicIndexNonDistinct obj = new MagicIndexNonDistinct();
