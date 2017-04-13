@@ -38,6 +38,7 @@ class BitWiseOperations {
         Now, int is of 4 bytes,hence 32 bits. So when you do shift by 33, it's equivalent to shift by 1. Hence : 100
         */
         System.out.println("3 << 2: " +(3 << 2));
+        System.out.println("1 << 3: " +(1 << 3));
         
         // Test of >>(right shift) Operator
         // n >> p  Shifts the bits of n right p positions. 
@@ -49,6 +50,8 @@ class BitWiseOperations {
         System.out.println("5 >> 2: " +(5 >> 2));
         System.out.println("4 >> 2: " +(4 >> 2));
         System.out.println("8 >> 2: " +(8 >> 2));
+        System.out.println("1 >> 1: " +(1 >> 1));
+         
         
          //System.out.println("2 >>= 1: " +(2 >>= 1));
     }
