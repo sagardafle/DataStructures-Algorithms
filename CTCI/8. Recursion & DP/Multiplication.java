@@ -1,5 +1,6 @@
 /*LOGIC :
 
+Complexity: O(log(s)) where s is the smaller number to be multiplied.
  Case-1 : When smaller number is even:
           minprod(30,35) = 2 * minprod(15,35);
  Case-2 : When smaller number is odd:
