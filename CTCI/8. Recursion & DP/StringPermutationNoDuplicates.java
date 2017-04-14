@@ -11,7 +11,7 @@
 */
 
 import java.util.*;
-public class StringPermutation {
+public class StringPermutationNoDuplicates {
     static List < String > output;
     public static void permutation(String str) {
         output = new ArrayList < > ();
@@ -31,7 +31,7 @@ public class StringPermutation {
     }
 
     public static void main(String[] args) {
-        StringPermutation sp = new StringPermutation();
+        StringPermutationNoDuplicates sp = new StringPermutationNoDuplicates();
         sp.permutation("abc");
     }
 }
