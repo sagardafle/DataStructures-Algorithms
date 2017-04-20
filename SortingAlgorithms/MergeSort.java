@@ -1,8 +1,8 @@
 /**
- * LOGIC: 
+ * LOGIC: MERGE SORT
  * Reference: https://www.youtube.com/watch?v=0ewhf9bqrJg (Rebel Guru)
- * BREAK: We will break an array of n items into n number of lists.
- * MERGE: Now, we try to eventually merge distinct list in a group so as to form a SINGLE list in a merged and sorted manner.
+ * DIVIDE: We will break an array of n items into n number of lists.
+ * CONQUER: Now, we try to eventually merge distinct list in a group so as to form a SINGLE list in a merged and sorted manner.
  * 
  * 
  */
