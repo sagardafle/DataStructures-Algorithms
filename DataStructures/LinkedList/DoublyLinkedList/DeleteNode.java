@@ -57,7 +57,7 @@ public class DeleteNode {
         // else locate correct position and remove
         else {
             DoublyLinkedList temp = head;
-            for (int i = 1; i < position; i += 1) {
+            for (int i = 0; i <= position; i += 1) {
                 temp = temp.getNext();
             }
             temp.getNext().setPrev(temp.getPrev());
@@ -66,7 +66,7 @@ public class DeleteNode {
         //finally reduce length by 1
         length -= 1;
     }
-}
+
 //Remove a node that matches specified node
 
 public void removeThisNode(DoublyLinkedList node) {
@@ -88,7 +88,7 @@ public void removeThisNode(DoublyLinkedList node) {
 
 //Remove Head value from the list.
 public int removeHead() {
-    if (length == 0) reurn Integer.MIN_VALUE;
+    if (length == 0) return Integer.MIN_VALUE;
     DoublyLinkedList temp = head.getNext();
     head.setNext(temp.getNext());
     temp.getNext().setPrev(head);

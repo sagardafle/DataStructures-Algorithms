@@ -16,7 +16,7 @@ class StackofPlates{
          this.capacity = capacity;
      }
     public static void main(String[] args){
-        StackofPlates sop = new StackofPlates(3); //capacity = 3
+        StackofPlates sop = new StackofPlates(3); //capacity = 3. This is the capacity of every stacks.
         for(int i=1;i<=15;i++){
             sop.push(i);
         }
@@ -34,7 +34,7 @@ class StackofPlates{
             //last stack has some capacity
             laststack.push(val);
         } else {
-            //last stack is null or eith full. Time to create a new stack.
+            //last stack is null or either full. Time to create a new stack.
             Stack<Integer> newStack = new Stack<>();
             newStack.push(val);
             platesstack.add(newStack);
@@ -46,7 +46,7 @@ class StackofPlates{
          Stack laststack = getLastStack();
          if(laststack == null) throw new EmptyStackException();
          int val = (int) laststack.pop();
-         if(laststack.size() ==0) platesstack.remove(platesstack.size()-1); //remove the last stack from the arraylist.
+         if(laststack.size() ==0) platesstack.remove(platesstack.size()-1); //remove the last stack from the arraylist when required.
          return val;
     }
     

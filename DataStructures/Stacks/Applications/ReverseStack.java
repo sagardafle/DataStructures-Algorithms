@@ -22,12 +22,12 @@ class ReverseStack{
         original.push(44);
         original.push(15);
         System.out.println("Original Stack: "+original);
-       // sort.reverseUsingOneOnlyStack(original);
+       // sort.reverseUsingTwoStacks(original);
         Stack<Integer> sorted = sort.reverseStackRecursively(original);
         System.out.println("Sorted Stack: "+sorted);
     }
     
-    public void reverseUsingOneOnlyStack(Stack original){
+    public void reverseUsingTwoStacks(Stack original){
         while(!original.isEmpty()){
             int temp = (int) original.pop();
            while(!sorted.isEmpty()){ 

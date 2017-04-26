@@ -2,7 +2,8 @@
  * LOGIC: 
  * 1. Divide the array into sizes n/k.
  * 2. Fix the slots for different stacks, i.e., use arr[0] to arr[n/k-1] for first stack, and arr[n/k] to arr[2n/k-1].
- * 3. Problem : Inefficient use of array space. A stack push operation may result in stack overflow even if there is space available in arr[].
+ * 3. Problem : Inefficient use of array space. 
+ * A stack push operation may result in stack overflow even if there is space available in arr[].
  */
  
 class KFixedSizeStacks{
@@ -17,20 +18,27 @@ class KFixedSizeStacks{
         
         //Push values in stack1
         for(int i=1;i<=stackcapacity;i++){
-            kFixedSizeStacks.push(1,i); // 1 2 3 
+            kFixedSizeStacks.push(0,i); // 1 2 3 
         }
         
         //Push values in stack2
         for(int i=1;i<=stackcapacity;i++){
-            kFixedSizeStacks.push(2,i+stackcapacity); //4 5 6
+            kFixedSizeStacks.push(1,i+stackcapacity); //4 5 6
         }
         
         //Push values in stack3
         for(int i=1;i<=stackcapacity;i++){
-            kFixedSizeStacks.push(3,i+stackcapacity+stackcapacity);// 7 8 9
+            kFixedSizeStacks.push(2,i+stackcapacity+stackcapacity);// 7 8 9
         }
         
         System.out.println("========Before popping========");
+        kFixedSizeStacks.printStack(0);
+         System.out.println("========After popping========");
+        //Pop from stack 0
+        kFixedSizeStacks.pop(0);
+        kFixedSizeStacks.printStack(0);
+        
+        System.out.println("\n\n\n========Before popping========");
         kFixedSizeStacks.printStack(1);
          System.out.println("========After popping========");
         //Pop from stack 1
@@ -61,6 +69,7 @@ class KFixedSizeStacks{
      */
      public void push(int stacknum, int val){
          sizes[stacknum]+= 1;  //increment the value of the sizes array for the corresponding stack.
+         System.out.println("Top of "+stacknum+" is: "+getTop(stacknum));
          values[getTop(stacknum)] = val; // add the value to be pushed at the corresponding top of the stack.
      }
      

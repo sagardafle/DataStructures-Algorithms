@@ -38,27 +38,15 @@ public class DetectLoop {
     }
     
     public static boolean hasLoop(Node current){
-        if(current == null) return false; //List is empty,so no loop.
-        if(current.next == null) return false; //Only one element in the list, so no loop.
         
-        Node slow,fast; //two references
-        slow = fast = current; //Initially both the pointers point to the HEAD.
-        
-        while(true){
-            slow = slow.next;           // 1 hop
-            if(fast.next!=null){
-                fast = fast.next.next;  //2 hops
-            } else{
-                return false;   // next node null => no loop.
-            }
-            
-            if(slow == null || fast == null){
-                return false;
-            }  
-                   
-            
+        Node slow,fast;
+        slow = fast = head;
+        while(fast !=null && fast.next!=null){
+            slow = slow.next;
+            fast = fast.next.next;
             if(slow == fast) return true;
         }
+        return false;
     }
     
     

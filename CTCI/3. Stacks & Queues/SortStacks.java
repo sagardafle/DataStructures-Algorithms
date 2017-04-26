@@ -22,12 +22,12 @@ class SortStacks{
         original.push(44);
         original.push(15);
         System.out.println("Original Stack: "+original);
-       // sort.sortUsingOneOnlyStack(original);
-        Stack<Integer> sorted = sort.sortStackRecursively(original);
+        sort.sortUsingTwoStacks(original);
+        // Stack<Integer> sorted = sort.sortStackRecursively(original);
         System.out.println("Sorted Stack: "+sorted);
     }
     
-    public void sortUsingOneOnlyStack(Stack original){
+    public void sortUsingTwoStacks(Stack original){
         while(!original.isEmpty()){
             int temp = (int) original.pop();
            while(!sorted.isEmpty() && sorted.peek() > temp){ 

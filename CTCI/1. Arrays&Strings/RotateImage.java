@@ -1,3 +1,16 @@
+/**
+ * You are given an n x n 2D matrix representing an image.
+
+	Rotate the image by 90 degrees (clockwise).
+
+	Follow up:
+	Could you do this in-place?
+LOGIC: 
+ * 
+ *  2 Steps: 
+        Step-1: Find Transpose of matrix : A matrix which is formed by turning all the rows of a given matrix into columns and vice-versa. 
+        Step-2: Change the symmetry.
+        */
 public class RotateImage {
 	public static void main(String[] args){
 	    	int[][] image = {
@@ -9,24 +22,33 @@ public class RotateImage {
 	    
 		System.out.println("Original:");
 		print(image);
-		rotate90Degrees(image);
+		transpose(image);
+		changesymmetry(image);
+		print(image);
 		
 	}
 
-	public static void rotate90Degrees(int[][] image) {
-		
+	public static void transpose(int[][] matrix) {
+		int s = 0;
+		int e = matrix.length-1;
+        
+		while(s<=e){
+	            int[] temp = matrix[s];
+	            matrix[s] = matrix[e];
+	            matrix[e] = temp;
+	            s++;e--;
+		}
+	}
 	
-		int[][] rotatedImage = new int[image.length][image[0].length]; //[R][C]
-	    for(int i=0;i<image.length;i++){
-	            rotatedImage[i][0] = image[image.length-1][i];
-	            rotatedImage[i][1] = image[image.length-2][i];
-	            rotatedImage[i][2] = image[image.length-3][i];
-	            rotatedImage[i][3] = image[image.length-4][i];
-	        }
-		
-		
+	public static void changesymmetry(int[][] matrix){
+		for(int i=0;i<matrix.length;i++){
+			for(int j=i+1;j<matrix[0].length;j++){
+				int temp = matrix[i][j];
+				matrix[i][j] = matrix[j][i];
+				matrix[j][i] = temp;
+			}
+		}
 		System.out.println("\nRotated 90 degrees:");
-		print(rotatedImage);
 	}
 	
 	private static void print(int[][] array) {

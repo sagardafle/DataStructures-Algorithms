@@ -4,7 +4,7 @@ Given two strings, write a function to check if they are within one edit of each
 */
 public class OneEditAway{
     public static void main(String[] args){
-        String s="pales";
+        String s="ple";
         String t="pale";
         boolean isoneeditaway = oneEditAway(s,t);
         System.out.println("isoneeditaway "+isoneeditaway);
@@ -21,7 +21,7 @@ public class OneEditAway{
      * If unmatch is found first time, set the flag to true. 
      * If unmatch is found second time, return false.
      */ 
-     / S: "pales"  T:"bales"
+     // S: "pales"  T:"bales"
     public static boolean oneReplaceAway(String s, String t){
          System.out.println("One replace away");
         boolean foundonediff =false ; 

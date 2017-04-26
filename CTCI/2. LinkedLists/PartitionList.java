@@ -1,4 +1,5 @@
-/*2.4 Partition: Write code to partition a linked list around a value x, 
+/*2.4 Partition: 
+                  Write code to partition a linked list around a value x, 
                  such that all currents less than x come before all currents greater than or equal to x. 
                  If x is contained within the list, the values of x only need to be after the elements less than x.
 */
@@ -64,18 +65,19 @@ public class PartitionList {
     public static void main(String args[])
     {
         PartitionList llist = new PartitionList();
-            head = new Node(1);
-            head.next = new Node(4);
-            head.next.next = new Node(3);
-            head.next.next.next = new Node(2);
+            head = new Node(3);
+            head.next = new Node(8);
+            head.next.next = new Node(2);
+            head.next.next.next = new Node(1);
             head.next.next.next.next = new Node(5);
-            head.next.next.next.next.next = new Node(2);
-            // head.next.next.next.next.next.next = new Node(1);
+            head.next.next.next.next.next = new Node(4);
+            head.next.next.next.next.next.next = new Node(0);
+            head.next.next.next.next.next.next.next = new Node(9);
  
             System.out.println("Given list");
              llist.printList(head);
-            Node newlist = llist.partitionAroundWith4pointers(3);
-            // Node newlist = llist.partitionAroundWith2pointers(head, 3);
+           // Node newlist = llist.partitionAroundWith4pointers(3);
+            Node newlist = llist.partitionAroundWith2pointers(head, 3);
 
  
             System.out.println("Partitioned Linked List");

@@ -27,7 +27,7 @@ public class EvenOrOddList{
         //if the list is even, the last pointer will be to null.
         current = head1;
         while(current!=null && current.next !=null){
-            current = current.next.next;
+            current = current.next.next; //hop 2 steps.
         }
         if (current == null) System.out.println("\nThe list is even");
         else System.out.println("\nThe list is odd");

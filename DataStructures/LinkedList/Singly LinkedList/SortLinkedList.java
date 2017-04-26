@@ -26,7 +26,7 @@ class SortLinkedList{
         Node b = mid.next;//secondList
         mid.next = null;
  
-        /* Step:-3: Recursively sort the sublists */
+        /* Step:-3: Recursively divide into N sublists */
         mergeSort(a);
         mergeSort(b);
  

@@ -19,7 +19,10 @@ class InfixToPostfix {
      * 2. Parse the input infix string. 
      *    2.1 If it is operand, append the operand to postfixstr.
      *    2.2 Else if it is operator: 
-     *       2.2.1 Keep popping the stack while: 1. Stack is not empty 2. s.peek() has higher precedence over the current operator 3. s.peek is not opening bracket.
+     *       2.2.1 Keep popping the stack while: 
+     *              1. Stack is not empty 
+     *              2. s.peek() has higher precedence over the current operator 
+     *              3. s.peek is not opening bracket.
      *       2.2.2 If all 3 conditions above are true, Append the operator from stack top to the output string.
      *       2.2.2 Else, we just push the current operator in input string to stack.
      *      

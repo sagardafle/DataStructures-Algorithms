@@ -55,17 +55,19 @@ class SwapTwoNodes
             currY = currY.next;
         }
  
+        System.out.println("\nCurrX "+currX.data);
+        System.out.println("CurrY "+currY.data);
         // If either x or y is not present, nothing to do
         if (currX == null || currY == null)
             return;
  
-        // If x is not head of linked list
+        // If x is not head of original linked list
         if (prevX != null)
             prevX.next = currY;
         else //make y the new head
             head = currY;
  
-        // If y is not head of linked list
+        // If y is not head of original linked list
         if (prevY != null)
             prevY.next = currX;
         else // make x the new head
@@ -121,7 +123,7 @@ class SwapTwoNodes
         System.out.print("\n Linked list before calling swapNodes() ");
         llist.printList();
  
-        llist.swapNodes(1, 7);
+        llist.swapNodes(2, 7);
  
         System.out.print("\n Linked list afterr calling swapNodes() ");
         llist.printList();

@@ -66,7 +66,7 @@ public class AnimalShelter{
         boolean isCat = animal.type.equals("Cat");
         boolean isDog = animal.type.equals("Dog");
         if(!isCat && !isDog)
-            throw new Exception("Unknow type of animal!");
+            throw new Exception("Unknown type of animal!");
            animal.arrived = new Date();
             if(isCat){
                 cats.add((Cat) animal);
