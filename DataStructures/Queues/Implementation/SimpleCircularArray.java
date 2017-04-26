@@ -1,7 +1,8 @@
 /**
  * LOGIC: We add elements circularly and use 2 variables to keep track of front & rear.
  * 1. Why we need circular array instead of normal array?
- *  - If we use a normal array, then after certain set of enqueue/dequeue operations, the indices at front and rear becomes useless. 
+ *  - If we use a normal array, then after certain set of enqueue/dequeue operations, 
+ *        the indices at front and rear becomes useless. 
  *  - To avoid this, we make use of a cirular array where we treat last and first elements as contiguous.
  *  - So, if we have any free slots at the beginning, the rear pointer can easily go to its next free slot.
  * 
@@ -11,7 +12,7 @@
  */ 
 import java.util.*;
 public class SimpleCircularArray{
-    static int CAPACITY = 20;
+    static int CAPACITY = 4;
     int size, front, rear;
     
     int queuearr[];
@@ -21,20 +22,25 @@ public class SimpleCircularArray{
     }
     public static void main(String args[]){
         SimpleCircularArray obj = new SimpleCircularArray(CAPACITY);
-        obj.enqueue(5);
-        obj.enqueue(15);
-        obj.enqueue(25);
-        obj.enqueue(35);
-        obj.enqueue(45);
+        obj.enqueue(1);
+        obj.enqueue(2);
+        obj.enqueue(3);
+        obj.enqueue(4);
+        //obj.enqueue(5);
         
         int valueatpeek = obj.peek();
         System.out.println("valueatpeek "+valueatpeek);
         
         int removedvalue = obj.dequeue();
         System.out.println("removedvalue "+removedvalue);
+        valueatpeek = obj.peek();
         System.out.println("valueatpeek "+valueatpeek);
         removedvalue = obj.dequeue();
         System.out.println("removedvalue "+removedvalue);
+        
+        obj.enqueue(5); // as the capacity == 4, the rear will go to front and add this value. 
+                        // This is the advantage of using a Circular Queue.
+        
          System.out.println("=======Printing Queue=========");
          obj.display();
     }

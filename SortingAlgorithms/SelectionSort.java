@@ -36,6 +36,7 @@ public class SelectionSort{
                     a[j] = temp;
                 } 
             }
+            printarray(a);
         }
     }
     

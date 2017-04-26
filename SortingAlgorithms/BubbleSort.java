@@ -4,7 +4,7 @@
 public class BubbleSort{
     int temp;
     public static void main(String args[]){
-        int a[] = {5,2,7,4,1,0,8,6,9};
+        int a[] = {16,5,2,7,4,1,0,8,9};
         BubbleSort  bubbleobj = new BubbleSort();
         bubbleobj.sortarray(a);
         System.out.println("\n=============Sorted array=============");
@@ -17,10 +17,10 @@ public class BubbleSort{
         //outer loop for passes
         for(int pass=1; pass<=n; pass++){
             //inner loop to compare elements
-            for(int current =0; current<n-pass; current++){
-                if(a[current] > a[current+1]){
+            for(int i =0; i<n-pass; i++){
+                if(a[i] > a[i+1]){
                     //swap the two numbers
-                    swap(current,current+1,a);
+                    swap(i,i+1,a);
                 }
             }
             System.out.println("\n Printing pass# "+pass);

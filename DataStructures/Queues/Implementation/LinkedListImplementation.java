@@ -28,6 +28,7 @@ class Node{
             }
             
             /*1. EnQueue*/
+            /* Add the value on the end(rear) side, unlike the front side*/
             public void enqueue(int data){
                   Node node = null;
                   if(head == null) {

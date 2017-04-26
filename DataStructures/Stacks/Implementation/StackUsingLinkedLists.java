@@ -41,7 +41,8 @@ public class StackUsingLinkedLists < Integer > implements Stack < Integer > {
      * 
      * @param data
      */
-     // values will be added in 40->30->20->10 format. Values will be added to the front of the list.
+     // values will be added in 40->30->20->10 format. 
+     //Values will be added to the front of the list.
     public void push(int data) {
         Node < Integer > newNode = new Node(data);
         newNode.setNext(top); //add previous top to next.
