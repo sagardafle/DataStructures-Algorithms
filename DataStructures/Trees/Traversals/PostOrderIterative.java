@@ -62,9 +62,8 @@ class PostOrderIterative{
              if(temp.left!=null) s1.push(temp.left);
              if(temp.right!=null) s1.push(temp.right);
       }
-     while(s2.size()>0){
-         System.out.print(" "+s2.pop().key);
+      while(s2.size()>0){
+            System.out.print(" "+s2.pop().key);
      }
-       
     }
 }

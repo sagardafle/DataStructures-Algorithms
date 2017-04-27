@@ -45,6 +45,7 @@ public class Synchronized{
                     t1.start();
                     t2.start();
                     
+                    /* Join makes sure that the count will be displyaed only after t1 and t2 are done with their execution*/
                     try{
                               t1.join();
                               t2.join();    

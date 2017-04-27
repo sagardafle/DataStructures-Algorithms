@@ -1,3 +1,5 @@
+http://www.javamadesoeasy.com/2015/02/hashmap-custom-implementation.html
+
 class HashMapCustom<K, V> {
      
      private Entry<K,V>[] table;   //Array of Entry.

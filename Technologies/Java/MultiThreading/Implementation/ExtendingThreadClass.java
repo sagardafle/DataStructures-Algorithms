@@ -14,10 +14,18 @@ class Runner extends Thread{
 public class ExtendingThreadClass {
           public static void main(String[] args){
                     Runner runner1 = new Runner();
+                    System.out.println("Starting Thread-1");
                     runner1.start();
+                    
+                    try{
+                              runner1.join(); //will make sure that Thread 2 will start only after the execution of thread1.
+                    }catch(Exception e){
+                              e.printStackTrace();
+                    }
                     
                     //Create another Thread
                     Runner runner2 = new Runner();
+                    System.out.println("Starting Thread-2");
                     runner2.start();
           }
 }

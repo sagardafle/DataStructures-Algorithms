@@ -3,10 +3,10 @@
  */ 
  import java.util.Arrays;
 public class BinarySearch{
-    static int a[] = new int[] {6,5,2,3,1,18,9,4,0,7,4};
+    static int a[] = new int[] {1,2,3,4,5,6,7,8,9};
     public static void main(String args[]){
         BinarySearch binobj = new BinarySearch();
-        Arrays.sort(a);
+        
         int indexvalue = binobj.findElement(7);
         System.out.println("Value found at index "+indexvalue);
     }
