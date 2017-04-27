@@ -36,22 +36,23 @@ public class KthSmallestNodeBST{
 		 obj.root.right.right.right = new Node(30);
 		 obj.root.left.left.left.left = new Node(2);
 		 k = 4;
-		 obj.getKthSmallestNode(obj.root, k);
+		 Node kthsmallest = obj.getKthSmallestNode(obj.root, k);
+		 System.out.println("KthSmallest "+kthsmallest.key);
 
     }
 
            static int counter = 1;
-           public static void getKthSmallestNode(Node root, int k) {
+           public static Node getKthSmallestNode(Node root, int k) {
                if (root != null) {
                    getKthSmallestNode(root.left, k);
                        if (counter == k) {
-                           System.out.println(root.key);
-                           return;
+                           return root;
                        }
                     
                     counter++;
                    getKthSmallestNode(root.right, k);
                } 
+               return null;
            }
     
 }

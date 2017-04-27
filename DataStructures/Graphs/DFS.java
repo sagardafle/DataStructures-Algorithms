@@ -68,6 +68,7 @@ public class DFS {
             System.out.println("First visited node - " + temp.label);
             for (Node n: temp.adjacencyList) {
                 if (n.visited != true) {
+                    System.out.println("Exploring "+n.label);
                     n.visited = true;
                     st.push(n);
                 }

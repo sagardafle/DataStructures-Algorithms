@@ -1,3 +1,4 @@
+/*Full Nodes are nodes which has both left and right children as non-empty.*/
 public class FullNodesCount {
     static Node root;
     
@@ -28,18 +29,18 @@ public class FullNodesCount {
 		 countobj.root.left.left.right = new Node(9);
 		 countobj.root.right.right.right = new Node(23);
 		 countobj.root.left.left.left.left = new Node(223);
-		 int finalcount  = countobj.countFullNodes2(countobj.root);
+		 int finalcount  = countobj.countFullNodes(countobj.root);
 		 System.out.println("Count "+finalcount);
 		
 		 
     }
     
    
-    int countFullNodes2(Node node){
-          if(node==null)
+    int countFullNodes(Node root){
+          if(root==null)
               return 0;
               
-          return countFullNodes2(node.left) + countFullNodes2(node.right) + (node.left!=null && node.right!=null ? 1 : 0);
+          return (root.left!=null && root.right!=null ? 1 : 0) + countFullNodes(root.left) + countFullNodes(root.right);
     }
     
     

@@ -10,7 +10,7 @@ When the cache reached its capacity, it should invalidate the least recently use
  * 
 SOLUTION:
 /**
- * The LRU cache is a hash table of keys and double linked nodes. 
+ * The LRU cache is a hash map of keys and double linked nodes. 
  * The hash table makes the time of get() to be O(1). 
  * The list of double linked nodes make the nodes adding/removal operations O(1).
  */
@@ -38,10 +38,10 @@ class 146_LRUCache{
     }
     
     public int get(int key){ //returns a node value against the given key.
-        if(map.containsKey(key){
+        if(map.containsKey(key)){
             Node n = map.get(key);
-            remove(n);
-            setHead(n);
+            remove(n); //removes n from its actual position
+            setHead(n); //places n in the front(head).
             return n.value;
         }
          return -1; //return -1 as the key is not found in the hashmap.

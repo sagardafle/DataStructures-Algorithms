@@ -1,7 +1,7 @@
 /**
  * Since the given tree is a binary tree, we can insert the element wherever we want. 
  * The only property of binary tree is that every node can have a maximum of two children. 
- * So, to keep the tree leveled we can perform a level order traversal on the binary tree 
+ * So, to keep the tree levele we can perform a level order traversal on the binary tree 
  * and insert the element wherever we find the node whose right child or left child is NULL.
  * */
  import java.util.*;

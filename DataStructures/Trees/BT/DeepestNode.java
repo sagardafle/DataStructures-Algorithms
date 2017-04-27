@@ -49,20 +49,21 @@ public class DeepestNode {
     
     public void deepestNode(Node root, int height, int level){
         if(root == null) return ;
-        if(root.left== null && root.right == null){
-              System.out.println("Level "+level);
-            if(level == height){
-                  // This means we have reached the last level which will have the deepest node.
+        
+        /*Increment the level and call the children nodes*/
+        deepestNode(root.left,height, level++);
+        deepestNode(root.right,height, level++);
+        
+        if(root.left== null && root.right == null){ // We reached Leaf node.
+            if(1+level == height){
+                  // We reached the deepest leaf node.
                 System.out.println(root.key);
             }
         }
-        /*Increment the level and call the children nodes*/
-        deepestNode(root.left,height, 1+level);
-        deepestNode(root.right,height, 1+level);
     }
     
         public int findHeight(Node root){
-            if(root == null) return -1;
+            if(root == null) return 0;
             return 1 + Math.max(findHeight(root.left), findHeight(root.right));
         }
 }

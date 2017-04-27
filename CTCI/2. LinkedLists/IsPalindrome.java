@@ -29,12 +29,12 @@ public class IsPalindrome{
         /**
          * Test case - 2: Even no of lists.
          */ 
-        head = new Node(10);
-        head.next = new Node(20);
-        head.next.next = new Node(30);
-        head.next.next.next = new Node(30);
-        head.next.next.next.next = new Node(20);
-        head.next.next.next.next.next = new Node(10);
+        // head = new Node(10);
+        // head.next = new Node(20);
+        // head.next.next = new Node(30);
+        // head.next.next.next = new Node(30);
+        // head.next.next.next.next = new Node(20);
+        // head.next.next.next.next.next = new Node(10);
        
         // boolean ispalindromelist = palindromelist.checkIfPalindromeIterative();
         // System.out.print(ispalindromelist);
@@ -78,12 +78,12 @@ public boolean checkIfPalindromeRecursive(Node right){
 			return true;
 		}
 		if(right.next!=null) {
-		    result = checkIfPalindromeRecursive(right.next);
+		   checkIfPalindromeRecursive(right.next);
 		}
-		if(result && right.data==left.data){
-			left = left.next;
-			return true;
-		}
-		return false;
+		//current left and right
+        boolean y = (left.data == right.data);
+		left = left.next;
+	
+		return y;
     }
 }

@@ -37,7 +37,7 @@ public class ClosestToTarget {
 		 closestobj.root.left.left.left.left = new Node(2);
 		 
 		 
-		  goal = closestobj.closestTarget(closestobj.root, 27); //22
+		  goal = closestobj.closestTarget(closestobj.root, 4); 
 		 System.out.println(goal);
 		 
 		 

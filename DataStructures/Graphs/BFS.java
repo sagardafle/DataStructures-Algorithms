@@ -28,12 +28,12 @@ public class BFS {
     b.adjacencyList.add(c);
     h.adjacencyList.add(e);
     h.adjacencyList.add(b);
-    c.adjacencyList.add(d);
     c.adjacencyList.add(e);
+    c.adjacencyList.add(d);
     c.adjacencyList.add(b);
     e.adjacencyList.add(c);
     e.adjacencyList.add(g);
-    e.adjacencyList.add(h);
+    //e.adjacencyList.add(h);
     e.adjacencyList.add(f);
     g.adjacencyList.add(e);
     f.adjacencyList.add(e);

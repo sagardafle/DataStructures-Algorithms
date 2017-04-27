@@ -51,7 +51,7 @@ public class AllAncestors {
                   return true;
         
               /* If target is present in either left or right subtree 
-                 of this node, then print this node */
+                of this node, then print this node */
               if (findAncestors(node.left, target)
                       || findAncestors(node.right, target)) 
               {
@@ -62,4 +62,5 @@ public class AllAncestors {
               /* Else return false */
               return false;
     }
+
 }

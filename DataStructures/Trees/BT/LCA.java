@@ -1,5 +1,5 @@
 /**
- *  LOGIC : 
+ *  LOGIC : Least common ancestor of Binary Tree
  * 1. This is a bottom-up approach. 
  * 2. If any of the target is found, it will be returned to its parents (in the form of 'left' or 'right' child).
  * 3. Parent will check if it was able to get both the childrens(left and right) , if yes, the parent is the LCA.

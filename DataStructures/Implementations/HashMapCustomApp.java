@@ -30,7 +30,7 @@ class HashMapCustom<K, V> {
      * Implementation allows you to put custom objects as a key as well.
      * Key Features: implementation provides you with following features:-
      *     >provide complete functionality how to override equals method.
-     *  >provide complete functionality how to override hashCode method.
+     *     >provide complete functionality how to override hashCode method.
      * @param newKey
      * @param data
      */

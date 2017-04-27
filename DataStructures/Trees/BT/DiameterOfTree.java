@@ -1,10 +1,4 @@
-/**
- * 1. Calculate the height of tree first. 
- * 2. Traverse through tree recursively.
- * 3. When both left & right child of the nodes are null: 
- *    a. Check if (level+1 == height). If yes, then we have reach the leaf node. Print the data. 
- *    b. Continue traversing the left and right subtree. 
- */ 
+
 public class DiameterOfTree {
     static Node root;
     
@@ -13,15 +7,15 @@ public class DiameterOfTree {
         
         /**
 		 * 
-		 * 		             1 
-		                                / \
-	* 			           2    3
-	*                                       / \  / \ 
-	*                                      7  6  5  4
-	* 			       / \          \
-	*                                   8  9         23
-		 *                       /            /
-		 *                      223         300 
+		 * 		                          1 
+		                                 / \
+	* 			                        2    3
+	*                                  / \  / \ 
+	*                                 7  6  5  4
+	* 			                    / \         \
+	*                              8  9         23
+		 *                        /              /
+		 *                      223            300 
 		 *                     /
 		 *                    400
 		 */

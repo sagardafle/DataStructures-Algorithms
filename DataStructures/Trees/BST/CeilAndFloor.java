@@ -3,11 +3,13 @@
  * LOGIC: 
  * */
 import java.util.*;
+
 public class CeilAndFloor{
     Node root;
     static int ceil , floor;
     public static void main(String args[]){
         CeilAndFloor obj = new CeilAndFloor();
+       
         
          
         /**
@@ -23,7 +25,7 @@ public class CeilAndFloor{
 		 *            2          
 		 */
        
-                     obj.root = new Node(16);
+         obj.root = new Node(16);
 		 obj.root.left = new Node(12);
 		 obj.root.right = new Node(20);
 		 obj.root.left.left = new Node(7);
@@ -36,24 +38,33 @@ public class CeilAndFloor{
 		 obj.root.left.left.left.left = new Node(2);
 		 
 		 //get floor and ceil
-		 obj.getFloorAndCeil(obj.root, 27);
-		 System.out.println("Floor and Ceil is: "+floor+" ,"+ceil);
+		 Value val = new Value();
+		 obj.getFloorAndCeil(obj.root, val, 7);
+		 System.out.println("Floor and Ceil is: "+val.floor+", "+val.ceil);
     }
     
-    public void getFloorAndCeil(Node root, int k){
-              if(root== null) return;
-              
-              if(root.key == k) ceil = floor = root.key;
-              
-              if(root.key<k) {
-                        floor=root.key;
-                        getFloorAndCeil(root.right,k);
-              }
-              
-              if(root.key>k) {
-                        ceil = root.key;
-                        getFloorAndCeil(root.left,k);
-              }
+    void getFloorAndCeil(Node root, Value value, int key){
+    	if(root==null)
+    		return;
+    	
+    	if(root.key==key){
+    		value.floor=root.key;
+    		value.ceil=root.key;
+    	}
+    	
+    	
+    	if(root.key<key){
+    		value.floor= root.key;
+    		getFloorAndCeil(root.right, value, key);
+    	}
+    	else {
+    		value.ceil= root.key;
+    		getFloorAndCeil(root.left, value, key);
+    	}
     }
     
+    static class Value{
+	   int floor= -1;
+	   int ceil= -1;
+   }
 }
