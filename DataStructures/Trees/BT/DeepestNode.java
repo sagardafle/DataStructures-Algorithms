@@ -41,7 +41,7 @@ public class DeepestNode {
 		 deepestobj.root.left.left.left.left = new Node(223);
 		 
 		 int height = deepestobj.findHeight(deepestobj.root);
-		 System.out.println("Height "+ height);
+		 System.out.println("Height: "+ height);
          
          deepestobj.deepestNode(deepestobj.root, height, 0);
 		 
@@ -57,7 +57,7 @@ public class DeepestNode {
         if(root.left== null && root.right == null){ // We reached Leaf node.
             if(1+level == height){
                   // We reached the deepest leaf node.
-                System.out.println(root.key);
+                System.out.println("Deepest Node is:" +root.key);
             }
         }
     }

@@ -54,8 +54,8 @@ public class MaxWidth {
                     } else {
                           //Current level is processed, move to next level
                           q.add(null); //adding null at the end of queue(which contains all node of next level) to indicate for further levels
-                          if(width>maxwidth) maxwidth = width;
-                          width = 0;
+                          maxwidth = Math.max(maxwidth,width);
+                          width = 0; //reset the width for next level
                     }
               }
         }

@@ -5,7 +5,7 @@ class BitWiseOperations {
         // Test of &(and) Operator
         // answer is 1 if both bit are 1 otherwise 0
         // 3&4 i.e 011 & 100 = 000
-        System.out.println("3&4: "+(3&4)); //0
+        System.out.println("3&4: "+(6>>>1)); //0
        
         // Test of |(OR) Operator
         // answer is 1 if either bit is 1

@@ -52,7 +52,7 @@ public class InsertandSearch{
                return root;
           }
           
-          if(root.key<element){
+          if(element>root.key){
                 root.right = insertElement(root.right, element);
           } else {
                 root.left = insertElement(root.left, element);

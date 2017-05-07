@@ -63,6 +63,7 @@ public class HeightorDepthIterative {
             } else {
                 //indicates that a level ended and all nodes of next level are in the queue
                 height++; //increasing the height at the end of each level
+                
                 if (q1.isEmpty())
                     break; //indicates the end of level order traversal
                 q1.add(null); //adding null at the end of queue(which contains all node of next level) to indicate for further levels

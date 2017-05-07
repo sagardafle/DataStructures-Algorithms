@@ -1,5 +1,6 @@
 /**
  * LOGIC : At the end of the each pass, we fix the position of the largest element.
+ * In-Place algorithm.
  */ 
 public class BubbleSort{
     int temp;

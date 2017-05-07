@@ -45,11 +45,9 @@ public class IdenticalTrees {
         /*2. either of them is empty */
              if(a == null || b ==null)
                return false;
-        /* 3. Node data mismatch */         
-             if(a.key != b.key) 
-              return false;
 
-            return (identicalTrees(a.left, b.left)
+            return ((a.key == b.key)
+                    && identicalTrees(a.left, b.left)
                     && identicalTrees(a.right, b.right));
   
     }

@@ -12,61 +12,51 @@ class SortLinkedList{
  
     Node head;  // head of list
  
-    Node mergeSort(Node head){
-          
-        /* Base case -- length 0 or 1 */
-        if(head == null || head.next == null){
-            return head;
-        }
-        /*Step-1 : Get the mid of Linked List */
-        Node mid = getMidNode(head);
- 
-        /*Step-2 : Partition original list. Create two linkedlists. */
-        Node a = head;//firstList
-        Node b = mid.next;//secondList
-        mid.next = null;
- 
-        /* Step:-3: Recursively divide into N sublists */
-        mergeSort(a);
-        mergeSort(b);
- 
-        /* Step-4:  Merge the two sorted lists together */
-        head = merge(a,b);
- 
-        return head;
+    public Node sortList(Node head) {
+    if (head == null || head.next == null)
+      return head;
+        
+    // step 1. cut the list to two halves
+    Node prev = null, slow = head, fast = head;
+    
+    while (fast != null && fast.next != null) {
+      prev = slow;
+      slow = slow.next;
+      fast = fast.next.next;
     }
     
- 
-    Node merge(Node a,Node b){
-        Node result = null;
-        /* Base cases */
-        if (a == null) 
-            return(b);
-        else if (b==null) 
-            return(a);
- 
-        /* Pick either a or b, and recur */
-        if (a.data <= b.data) {
-            result = a;
-            result.next = merge(a.next, b);
-        }
-        else{
-            result = b;
-            result.next = merge(a, b.next);
-        }
-        return(result);
-}
- 
- Node getMidNode(Node head){
-        Node slow = head;
-        Node fast = head.next;
- 
-        while(fast != null && fast.next != null){
-            slow =slow.next;
-            fast =fast.next.next;
-        }
-        return slow;
+    prev.next = null;
+    
+    // step 2. sort each half
+    Node l1 = sortList(head);
+    Node l2 = sortList(slow);
+    
+    // step 3. merge l1 and l2
+    return merge(l1, l2);
+  }
+  
+  Node merge(Node l1, Node l2) {
+    Node l = new Node(0), p = l;
+    
+    while (l1 != null && l2 != null) {
+      if (l1.data < l2.data) {
+        p.next = l1;
+        l1 = l1.next;
+      } else {
+        p.next = l2;
+        l2 = l2.next;
+      }
+        p = p.next;
     }
+    
+    if (l1 != null)
+      p.next = l1;
+    
+    if (l2 != null)
+      p.next = l2;
+    
+    return l.next;
+  }
  
     /* Inserts a new Node at front of the list. */
     public void push(int new_data)
@@ -102,7 +92,7 @@ class SortLinkedList{
         llist.push(3);
         llist.push(2);
  
-        llist.head = llist.mergeSort(llist.head); 
+        llist.head = llist.sortList(llist.head); 
         llist.printList(llist.head);
  
     }

@@ -82,7 +82,7 @@ public boolean checkIfPalindromeRecursive(Node right){
 		}
 		//current left and right
         boolean y = (left.data == right.data);
-		left = left.next;
+		left = left.next; //incremenet left 
 	
 		return y;
     }

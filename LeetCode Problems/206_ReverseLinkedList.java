@@ -37,8 +37,8 @@ public class Solution {
             //2. Rotate the list
                current.next = previousNode;
             //3. moving currentNode and previousNode by 1 node
-			  previousNode = current;
-			  current = nextNode;
+	     previousNode = current;
+	     current = nextNode;
         }
         head = current;
         current.next = previousNode;

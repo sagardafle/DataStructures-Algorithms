@@ -40,7 +40,7 @@
           int right = mid+1;
           int k = 0;
           
-          // STEP:1 Compare each elements of left and right subarray( card deck example) and merge them into temp array
+          // STEP:1 Compare each elements of left and right subarray(card deck example) and merge them into temp array
           while(left<=mid && right <= high){
               if(array[left]<array[right]){ //if 1st element on the left is smaller than the 1st element on the right, we add that element in temp array.
                   temp[k++] = array[left++];

@@ -2,7 +2,7 @@
  * Given nxn board place n queen on this board so that they dont attack each other. One solution is to find
  * any placement of queens which do not attack each other.
  * 
- * columnsarr. length == GRID SIZE
+ * columnsarr.length == GRID SIZE
  * columnsarr[r] = c says that row r has a queen at column c. 
  */ 
 import java.util.ArrayList;

@@ -10,19 +10,19 @@
 /*Logic:
 if A[mid] < mid , we cant be sure whether to go right or left unlike previous example. 
 :et A[3] = 2, A[4] = 2 and A[5] =3 and consider mid = 5. 
-Now, we are sure that '4' cannot be magic since A[4] HAS TO BE less than or equal to A[5].
+Now, we are sure that '4' cannot be magic since A[4] HAS TO BE less than or equal to A[5](which is 3).
 So, we can easily skip A[4] while checking left part of the array. 
 This skipping is determined as:
 
-          - Left part : leftIndex = Math.min(mid-1,a[mid]); //   let mid = 5      Math.min(3,4) .. we search from 0..3
-          - Right part : rightIndex = Mat.max(mid+1,a[mid]); //                   Math.max(6,5) .. we search from 6..n-1
+          - Left part : leftIndex = Math.min(mid-1,a[mid]); //   let mid = 5 A[5]=3      Math.min(4,3) .. we search from 0..3
+          - Right part : rightIndex = Mat.max(mid+1,a[mid]); //                          Math.max(6,3) .. we search from 6..n-1
 
 */
 class MagicIndexNonDistinct{
           public static void main(String[] args){
                     MagicIndexNonDistinct obj = new MagicIndexNonDistinct();
                     int a[] = {-10,-5,2,2,2,3,4,7,9,12,13}; 
-                    System.out.println("Has magix index=" +obj.hasMagicIndex(a));
+                    System.out.println("Has magix index= " +obj.hasMagicIndex(a));
           }
           
           public boolean hasMagicIndex(int [] a){
@@ -33,7 +33,7 @@ class MagicIndexNonDistinct{
                     if(end<start) return false;
                     int mid = (start+end)/2;
                     if(a[mid] == mid) {
-                              System.out.println("Magix Index is:" +mid);
+                              System.out.println("Magix Index is: " +mid);
                               return true;
                     }
                     

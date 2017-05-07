@@ -7,7 +7,7 @@ public class InsertionSort{
       public static void main(String args[]){
         int a[] = {5,2,7,4,1,0,8,6,9};
         InsertionSort  insertionobj = new InsertionSort();
-        System.out.println("\n=============UnSorted array=============");
+        System.out.println("\n=============Unsorted array=============");
          insertionobj.printarray(a);
         insertionobj.sortarray(a);
         System.out.println("\n=============Sorted array=============");
@@ -15,10 +15,10 @@ public class InsertionSort{
       }
     
     public void sortarray(int[] a){
-        int i,j,key,temp;
-        for(i=1;i<a.length;i++){ //i=1 as the very first element is already sorted.
+        int key,temp;
+        for(int i=1;i<a.length;i++){ //i=1 as the very first element is already sorted.
             key = a[i];
-            j = i-1;
+            int j = i-1;
             while(j >= 0 && a[j] > key){ // we will swap the values only if 
                                         //the elements of the current key is lesser than the elements on the left.
             

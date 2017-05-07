@@ -1,5 +1,5 @@
 /**
- * The only in-place sorting algorithm. 
+ * in-place sorting algorithm. 
  * Complexity : o(nlogn)
  * LOGIC: 
  * 1. Heapify phase: Build max-heap (using bottom-up approach)
