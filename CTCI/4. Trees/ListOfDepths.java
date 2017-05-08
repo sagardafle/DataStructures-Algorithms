@@ -2,14 +2,14 @@
  
          /**
 		 * 
-		 * 	             16 
+		 * 	                   16 
 		                     /    \
-	* 		          12     20
-	*                             / \    / \ 
-	*                           7  14   19  23
-	* 		       / \	  \
-	*                         3  9            30
-		 *             /
+	* 		                12     20
+	*                      / \    / \ 
+	*                    7  14   19  23
+	* 		            / \	            \
+	*                  3  9            30
+		 *            /
 		 *            2          
 		 */
 
@@ -36,7 +36,7 @@
     
  public List<List<Integer>> printListOfDepths(Node root) {
         List<List<Integer>> finalList = new ArrayList<List<Integer>>();
-        makeList(finalList,root,0);
+        makeList(finalList,root,0); //calling helper function
         return finalList;
     }
     

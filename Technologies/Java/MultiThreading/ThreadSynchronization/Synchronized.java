@@ -6,7 +6,8 @@
  *           will be executed by the main method only when the t1 and t2 thread have completed their execution
  * 
  * SYNCHRONIZED: 1. Synchronized methods enable a simple strategy for preventing thread interference and memory consistency errors.
- *                  If an object is visible to more than one thread, all reads or writes to that object's variables are done through synchronized methods.
+ *                  If an object is visible to more than one thread, 
+ *                            all reads or writes to that object's variables are done through synchronized methods.
  *               2. When you have two threads that are reading and writing to the same 'resource', 
  *                  say a variable named 'count', you need to ensure that these threads access the variable in an atomic way. 
  *                  Without the synchronized keyword, your thread 1 may not see the change thread 2 made to count, or worse, it may only be half changed. 

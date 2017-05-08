@@ -15,20 +15,20 @@ public class BSTfromArray{
         BSTfromArray bstarrayobj = new BSTfromArray();
         int [] a = new int[] {0, 1, 2, 3, 4, 5, 6, 7};
         int n = a.length -1 ;
-        bstarrayobj.root = bstarrayobj.createBST(0, n, a);
+        bstarrayobj.root = bstarrayobj.createBST(a, 0, n);
         
         System.out.println("Preorder traversal of constructed BST");
 		bstarrayobj.findpreOrder(bstarrayobj.root);
     }
     
-    public Node createBST (int start, int end, int[] a){
+    public Node createBST (int[] a, int start, int end){
         System.out.println("Parsing "+start+","+end);
         if(start > end) return null;
         int mid = (start+end)/2;
         System.out.println("Creating node ==  "+a[mid]);
         Node node = new Node(mid);
-        node.left = createBST(start, mid-1, a);
-        node.right = createBST(mid+1,end,a);
+        node.left = createBST(a, start, mid-1);
+        node.right = createBST(a, mid+1,end);
         return node;
     }
     

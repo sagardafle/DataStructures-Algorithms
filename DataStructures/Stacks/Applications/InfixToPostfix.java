@@ -10,7 +10,7 @@ class InfixToPostfix {
         //exp = "A+B*C";
         String postfixstr = intopost.convertToPostfix(exp);
         System.out.println("Original String " + exp);
-        System.out.println("Converted String " + postfixstr);
+        System.out.println("Converted String " + postfixstr); //output: AB+C*D-E*
     }
 
     /**

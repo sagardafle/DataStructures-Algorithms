@@ -70,6 +70,7 @@ public static void main(String[] args) {
         stackdynamicarray.push(20);
         stackdynamicarray.push(30);
         stackdynamicarray.push(40);
+        stackdynamicarray.push(50);
 
         for (int i = 0; i < 4; i++) {
             System.out.println("Popped value " + stackdynamicarray.pop());

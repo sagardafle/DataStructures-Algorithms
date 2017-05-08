@@ -6,15 +6,15 @@ public class SuccessorAndPredecessor {
 
         /**
 		 * 
-		 * 	        16 
-		                /    \
-	* 		     12     20
-	*                       / \    /  \ 
-	*                      7  14  19   23
-	* 	            / \	    /  \
-	*                    3  9        22   30
-		 *        /
-		 *       2          
+		 * 	                  16 
+		                    /    \
+	* 		              12      20
+	*                    / \     /  \ 
+	*                   7  14   19   23
+	* 	               / \	        /   \
+	*                 3  9         22    30
+		 *           /
+		 *           2          
 		 */
 
 
@@ -33,11 +33,11 @@ public class SuccessorAndPredecessor {
         obj.root.left.left.left.left = new Node(2);
 
         //Find InOrder Successor
-        Node successor = obj.successor(obj.root, obj.root.left.right); //14
+        Node successor = obj.successor(obj.root, obj.root.left.left); //7
         System.out.println("The successor is: " + successor.key);
 
         //Find InOrder Predecessor
-        Node predecessor = obj.predecessor(obj.root, obj.root.left.right); //14
+        Node predecessor = obj.predecessor(obj.root, obj.root.left.left); //7
         System.out.println("The predecessor is: " + predecessor.key);
 
 
