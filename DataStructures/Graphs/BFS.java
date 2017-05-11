@@ -61,6 +61,7 @@ public class BFS {
         System.out.println("First visited node - " + temp.label);
         for(Node n : temp.adjacencyList){
             if(n.visited!=true){
+                System.out.println("Now Visiting node ------- " + n.label);
                 n.visited=true;
                 q.add(n);
             }

@@ -21,7 +21,7 @@ public class BubbleSort{
             for(int i =0; i<n-pass; i++){
                 if(a[i] > a[i+1]){
                     //swap the two numbers
-                    swap(i,i+1,a);
+                    swap(a,i,i+1);
                 }
             }
             System.out.println("\n Printing pass# "+pass);
@@ -29,7 +29,7 @@ public class BubbleSort{
         }
     }
     
-    public void swap(int m,int n,int a[]){
+    public void swap(int a[],int m,int n){
         temp = a[m];
         a[m] = a[n];
         a[n] = temp;

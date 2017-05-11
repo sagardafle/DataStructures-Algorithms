@@ -3,7 +3,7 @@
  * */
 
 class MaximumNonAdjacentSum {
-    /*Function to return max sum such that no two elements
+    /*Function to return max sum such that elements are non-adjacent
       are adjacent */
       
     int noncontiguoussum(int[] arr, int size) {
@@ -29,12 +29,7 @@ class MaximumNonAdjacentSum {
     public static void main(String[] args) {
         MaximumNonAdjacentSum sum = new MaximumNonAdjacentSum();
         int arr[] = new int[] {
-            5,
-            5,
-            10,
-            100,
-            10,
-            5
+           10,30,6,7,4,2 //30,7 and 2
         };
         System.out.println(sum.noncontiguoussum(arr, arr.length));
     }

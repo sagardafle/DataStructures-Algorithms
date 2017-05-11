@@ -15,9 +15,9 @@ class DuplicateCount
     static int lastoccurence = 0;
     public static void main (String[] args) throws java.lang.Exception
     {
-       int[] a = {1, 1, 2, 2, 2, 2, 2, 3,3,3};
+       int[] a = {1, 1, 2, 2, 2, 2, 2, 3, 3, 3};
         int n = a.length-1;
-        int x = 3;
+        int x = 2;
         
         int first = findFirst(a,0,n,x);
         int last = findLast(a,0,n,x);
@@ -34,7 +34,7 @@ class DuplicateCount
         while(start<end){
             mid = (start+end)/2;
             if(a[mid] == x) {
-               while(a[mid]==x){
+               while(mid>0 && a[mid]==x){
                          mid--;
                }
                break;

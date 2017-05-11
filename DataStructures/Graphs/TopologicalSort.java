@@ -31,8 +31,7 @@ public class TopologicalSort<T> {
         return stack;
     }
 
-    private void topSortUtil(Vertex<T> vertex, Deque<Vertex<T>> stack,
-            Set<Vertex<T>> visited) {
+    private void topSortUtil(Vertex<T> vertex, Deque<Vertex<T>> stack, Set<Vertex<T>> visited) {
         visited.add(vertex);
         for(Vertex<T> childVertex : vertex.getAdjacentVertexes()){
             if(visited.contains(childVertex)){

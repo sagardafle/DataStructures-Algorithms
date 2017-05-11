@@ -17,6 +17,7 @@ public class NQueensProblem {
         } else {
             for (int queen = 0; queen < GRID_SIZE; queen++) {
                 if (checkValid(columnsarr, row, queen)) {
+                    System.out.println("Placing Queen at row: "+row+ " and column: "+row);
                     columnsarr[row] = queen; // Place queen at this row
                     placeQueens(row + 1, columnsarr, results); //Proceed to further row.
                 }
@@ -34,14 +35,15 @@ public class NQueensProblem {
         for (int row2 = 0; row2 < row1; row2++) {
             int column2 = columnsarr[row2];
             
-            /* Check if (row2, column2) invalidates (row1, column1) as a queen spot. */
+            /* Check if (row2, column2) invalidates (row1, column1) as a queen spot.
+               Two cases for this*/
 
-            /* Check if rows have a queen in the same column */
+            /* Case-1: Check if rows have a queen in the same column */
             if (column1 == column2) {
                 return false;
             }
 
-            /* Check diagonals: if the distance between the columnsarr equals the distance
+            /* Case-2: Check diagonals: if the distance between the columnsarr equals the distance
              * between the rows, then they’re in the same diagonal. */
             int columnDistance = Math.abs(column2 - column1);
             int rowDistance = row1 - row2; // row1 > row2, so no need to use absolute value
@@ -50,6 +52,15 @@ public class NQueensProblem {
             }
         }
         return true;
+    }
+    
+     public static void main(String[] args) {
+        ArrayList < Integer[] > results = new ArrayList < Integer[] > ();
+        Integer[] columnsarr = new Integer[GRID_SIZE];
+        clear(columnsarr);
+        placeQueens(0, columnsarr, results);
+        printBoards(results);
+        System.out.println(results.size());
     }
 
     public static void clear(Integer[] columnsarr) {
@@ -91,12 +102,5 @@ public class NQueensProblem {
         }
     }
 
-    public static void main(String[] args) {
-        ArrayList < Integer[] > results = new ArrayList < Integer[] > ();
-        Integer[] columnsarr = new Integer[GRID_SIZE];
-        clear(columnsarr);
-        placeQueens(0, columnsarr, results);
-        printBoards(results);
-        System.out.println(results.size());
-    }
+   
 }

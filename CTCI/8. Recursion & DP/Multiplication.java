@@ -4,7 +4,7 @@ Complexity: O(log(s)) where s is the smaller number to be multiplied.
  Case-1 : When smaller number is even:
           minprod(30,35) = 2 * minprod(15,35);
  Case-2 : When smaller number is odd:
-          minprod(31,35) = 2 * minprod(15,35) + 35;
+          minprod(31,35) = 2 * minprod(15,35) + 35; (2*halfprod+largernumber) == (halfprod+halfprod+largenum)
           
           On even numbers, we just divide the smaller number by 2 and double the result on recursive calls.
           On odd numbers, we do the same, but we also add bigger number to the result.

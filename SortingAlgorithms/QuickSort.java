@@ -46,12 +46,14 @@ public class QuickSort {
         for (i = start; i < end; i++) {
             if (A[i] <= pivot) {
                 //Swap A[i] with the A[pIndex]
+                System.out.println("Swapping "+A[i]+" with "+A[pIndex]);
                 swap(i, pIndex);
                 //move pIndex to right
                 pIndex = pIndex + 1;
             }
         }
         /*Finally swap the pivot with the element at A[pIndex]*/
+        System.out.println("Pivot Swap "+A[end]+" with "+A[pIndex]);
         swap(pIndex, end);
         return pIndex;
     }
@@ -73,14 +75,7 @@ public class QuickSort {
     // Driver program
     static int[] arr;
     public static void main(String args[]) {
-        arr = new int[] {
-            10,
-            7,
-            8,
-            9,
-            1,
-            5
-        };
+        arr = new int[] {7,2,1,6,8,5,3,4};
         int n = arr.length;
 
         QuickSort ob = new QuickSort();
