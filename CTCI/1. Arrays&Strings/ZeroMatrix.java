@@ -46,12 +46,12 @@ class ZeroMatrix
  }
  
     public static void nullifyRows(int[][] a, int rownum){
-         for(int i=0;i<a.length;i++)
+         for(int i=0;i<a[0].length;i++)
           a[rownum][i] = 0;
      }
      
      public static void nullifyColumns(int[][] a, int column){
-         for(int i=0;i<a[0].length;i++)
+         for(int i=0;i<a.length;i++)
           a[i][column] = 0;
      }
      
