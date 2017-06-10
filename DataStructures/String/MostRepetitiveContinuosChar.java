@@ -16,7 +16,7 @@ public class MostRepetitiveContinuosChar {
                 count = 1;
             } else {
                 count++;
-                if (max < count) {
+                if (count>max) {
                     max = count;
                     result = curr;
                 }
