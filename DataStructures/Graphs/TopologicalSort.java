@@ -42,6 +42,18 @@ public class TopologicalSort<T> {
         stack.offerFirst(vertex);
     }
     
+    
+    /*
+    5
+    \
+     6    1
+      \  /  \
+       3     2
+      / \
+     4   8
+          \
+          11
+    */
     public static void main(String args[]){
         Graph1<Integer> graph = new Graph1<>(true);
         graph.addEdge(1, 3);

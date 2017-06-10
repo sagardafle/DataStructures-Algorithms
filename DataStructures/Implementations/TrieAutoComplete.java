@@ -20,15 +20,18 @@ public class TrieAutoComplete {
     public TrieAutoComplete(String[] dict) {
         trie = new Node("");
         for (String s: dict) insertWord(s);
+         System.out.println("AFTER INSERT: Trie details: Prefix: "+trie.prefix+"Children: "+trie.children);
     }
 
     // Insert a word into the trie
     private void insertWord(String s) {
         // Iterate through each character in the string. If the character is not
         // already in the trie then add it
+        System.out.println("Trie details: Prefix: "+trie.prefix+"Children: "+trie.children);
         Node curr = trie;
         for (int i = 0; i < s.length(); i++) {
             if (!curr.children.containsKey(s.charAt(i))) {
+                System.out.println("Adding "+s.charAt(i)+" to the tree");
                 curr.children.put(s.charAt(i), new Node(s.substring(0, i + 1)));
             }
             curr = curr.children.get(s.charAt(i));
@@ -57,6 +60,7 @@ public class TrieAutoComplete {
 
     // Recursively find every child word
     private void findAllChildWords(Node n, List < String > results) {
+        System.out.println("###Searching: "+n.prefix);
         if (n.isWord) results.add(n.prefix);
         for (Character c: n.children.keySet()) {
             findAllChildWords(n.children.get(c), results);
@@ -64,16 +68,20 @@ public class TrieAutoComplete {
     }
 
     public static void main(String[] args) {
+        // String[] dictionary = {
+        //     "abc",
+        //     "acd",
+        //     "bcd",
+        //     "bf",
+        //     "a",
+        //     "aba"
+        // };
         String[] dictionary = {
-            "abc",
-            "acd",
-            "bcd",
-            "bf",
-            "a",
-            "aba"
+            "their",
+            "there"
         };
         TrieAutoComplete obj = new TrieAutoComplete(dictionary);
-        List < String > autocompleteresults = obj.getWordsForPrefix("b");
+        List < String > autocompleteresults = obj.getWordsForPrefix("the");
         System.out.println(autocompleteresults);
     }
 }

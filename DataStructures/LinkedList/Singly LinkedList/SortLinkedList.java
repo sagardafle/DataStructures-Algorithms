@@ -36,26 +36,26 @@ class SortLinkedList{
   }
   
   Node merge(Node l1, Node l2) {
-    Node l = new Node(0), p = l;
+    Node dummy = new Node(0), result = dummy;
     
     while (l1 != null && l2 != null) {
       if (l1.data < l2.data) {
-        p.next = l1;
+        result.next = l1;
         l1 = l1.next;
       } else {
-        p.next = l2;
+        result.next = l2;
         l2 = l2.next;
       }
-        p = p.next;
+        result = result.next;
     }
     
     if (l1 != null)
-      p.next = l1;
+      result.next = l1;
     
     if (l2 != null)
-      p.next = l2;
+      result.next = l2;
     
-    return l.next;
+    return dummy.next;
   }
  
     /* Inserts a new Node at front of the list. */

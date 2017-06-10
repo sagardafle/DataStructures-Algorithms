@@ -33,7 +33,7 @@ class ZeroSumSubarray {
     }        
      
     public static void main(String arg[]){
-        int arr[] = {4, 2, -3, 1, 6};
+        int arr[] = {8,7,3,5,-4,-4};
         if (printZeroSumSubarray(arr))
             System.out.println("Found a subarray with 0 sum");
         else

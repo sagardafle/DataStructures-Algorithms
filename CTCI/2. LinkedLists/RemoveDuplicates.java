@@ -77,12 +77,11 @@ public class RemoveDuplicates {
             int data = currNode.data;
             if(ht.contains(data)){
                 prevNode.next = currNode.next;
-                currNode = currNode.next;
             }else{
                 ht.add(data);
                 prevNode = currNode;
-                currNode = currNode.next;
             }
+            currNode = currNode.next;
         }
     }
         

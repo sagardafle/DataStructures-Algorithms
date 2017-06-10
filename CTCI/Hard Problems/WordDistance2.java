@@ -1,6 +1,7 @@
-public class WordDistance {
+import java.util.*;
+public class WordDistance2 {
     HashMap<String, ArrayList<Integer>> map;
-    public wordDistance(String[] words) {
+    public void wordDistance(String[] words) {
         map = new HashMap<String, ArrayList<Integer>>();
         for(int i=0; i<words.length; i++){
             if(map.containsKey(words[i])){

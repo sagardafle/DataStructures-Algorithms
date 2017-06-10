@@ -40,7 +40,7 @@ public class SumListsReverse {
     public Node sumListsHelper(Node l1, Node l2, int carry) {
         if (l1 == null && l2 == null && carry == 0) return null;
 
-        Node result = null;
+        Node newhead = null;
         int value = carry;
         if (l1 != null) {
             value += l1.data;
@@ -50,16 +50,16 @@ public class SumListsReverse {
         }
 
         //create new node
-        result =  new Node(value%10); //we will only take the 2nd digit of the value
+        newhead =  new Node(value%10); //we will only take the 2nd digit of the value
 
         /* Recurse */
         if (l1 != null || l2 != null) {
-            Node more = sumListsHelper(l1 == null ? null : l1.next,
+            Node rest = sumListsHelper(l1 == null ? null : l1.next,
                     l2 == null ? null : l2.next,
                     value >= 10 ? 1 : 0); //carry
-            result.next = more;
+            newhead.next = rest;
         }
-        return result;
+        return newhead;
     }
     
     void printList(Node head){

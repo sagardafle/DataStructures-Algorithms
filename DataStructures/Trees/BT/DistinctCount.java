@@ -7,11 +7,11 @@ public class DistinctCount {
 
         /**
 		 * 
-		 * 		     1 
+		 * 		         1 
 		                / \
-	* 			   2    3
-	*                   / \  / \ 
-	*                  7  6  5  4
+	* 			       1    1
+	*                / \  / \ 
+	*               1  6  5  4
 	* 		      / \	     \
 	*                8   9        23
 		 *        /
@@ -36,7 +36,7 @@ public class DistinctCount {
     public static int getDisCnt(Node root) {
         Set < Integer > uniq = new HashSet < > ();
         if (root == null) {
-            return 0;
+            return uniq.size();
         }
         return getMaxHelper(root, uniq);
     }

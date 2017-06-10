@@ -8,8 +8,8 @@
  */
  public class MergeSort{
       public static void main(String args[]){
-        //int a[] = {-5,2,7,4,10,44,23,41};
-        int a[] = {3,5,2,1};
+        int a[] = {30,50,20,70,10};
+        //int a[] = {3,5,2,1};
         MergeSort  mergeobj = new MergeSort();
         System.out.println("\n=============UnSorted array=============");
          mergeobj.printarray(a);
