@@ -35,9 +35,9 @@ public class TowersofHanoi {
        if (n == 1) {
            System.out.println(source + " -> " + destination);
        } else {
-           solve(n - 1, source, destination, buffer);
-           System.out.println(source + " -> " + destination);
-           solve(n - 1, buffer, source, destination);
+           solve(n - 1, source, destination, buffer); //Move (n-1) discs from source disc to buffer disc.
+           System.out.println(source + " -> " + destination); //Move the last disc from source disc to destination disc.
+           solve(n - 1, buffer, source, destination); //Move the (n-1) discs from buffer disc to destination disc.
        }
    }
 

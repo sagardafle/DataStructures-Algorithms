@@ -49,5 +49,4 @@ public class PrintPaths {
         if(root.right!=null) binaryTreePathsHelper(root.right, path + root.key + "->", pathList);
         return pathList;
     }
-        
 }

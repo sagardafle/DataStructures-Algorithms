@@ -47,6 +47,6 @@ public class MaxRepetitveNonContinuos {
 
     public static void main(String[] args) {
         //System.out.println(mostRepetitiveCharUnoptimized("Sgaar Dlafle l"));
-        System.out.println(mostRepetitiveCharOptimized("Sgaar Dlafle l"));
+        System.out.println(mostRepetitiveCharOptimized("Sgaar Dlafle ll"));
     }
 }

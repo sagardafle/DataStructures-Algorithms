@@ -20,9 +20,9 @@ public class SubststringWithKUniqueCharacters {
         HashMap < Character, Integer > map = new HashMap < Character, Integer > ();
 
         int maxLen = k;
-        int left = 0;
-        for (int i = 0; i < s.length(); i++) {
-            char c = s.charAt(i);
+        int start = 0;
+        for (int end = 0; end < s.length(); end++) {
+            char c = s.charAt(end);
             if (map.containsKey(c)) {
                 map.put(c, map.get(c) + 1);
             } else {
@@ -30,24 +30,24 @@ public class SubststringWithKUniqueCharacters {
             }
 
             if (map.size() > k) {
-                maxLen = Math.max(maxLen, i - left);
+                maxLen = Math.max(maxLen, end - start);
 
                 while (map.size() > k) {
 
-                    char fc = s.charAt(left);
+                    char fc = s.charAt(start);
                     if (map.get(fc) == 1) {
                         map.remove(fc);
                     } else {
                         map.put(fc, map.get(fc) - 1);
                     }
 
-                    left++;
+                    start++;
                 }
             }
 
         }
-        maxLen = Math.max(maxLen, s.length() - left);
-        maxSoFar = s.substring(left, left + maxLen);
+        maxLen = Math.max(maxLen, s.length() - start);
+        maxSoFar = s.substring(start, start + maxLen);
 
         System.out.println("Max length of the substring with " + k + " unique characters= " + maxLen);
         return maxSoFar;

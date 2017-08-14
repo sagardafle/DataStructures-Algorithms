@@ -22,7 +22,7 @@ class MagicIndexDistinct{
                               System.out.println("Magix Index is:" +mid);
                               return true;
                     }
-                    else if(a[mid] < mid) return hasMagicIndexhelper(a,mid+1,end);  //index value has to be on the right.
+                    else if(a[mid] < mid) return hasMagicIndexhelper(a,mid+1,end);  //magic index value has to be on the right.
                     else return hasMagicIndexhelper(a,start,mid-1);
           }
 }

@@ -12,8 +12,8 @@ s = "rat", t = "car", return false.
 import java.util.*;
 public class CheckPermutation{
     public static void main(String[] args){
-        String s = "c1ar";
-        String t = "a1erc";
+        String s = "arc";
+        String t = "arcd";
         boolean isPermutation = checkPermutation2(s,t);
         System.out.print("isPermutation "+isPermutation);
     }

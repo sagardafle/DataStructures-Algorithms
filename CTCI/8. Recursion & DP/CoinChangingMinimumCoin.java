@@ -33,10 +33,8 @@ public class CoinChangingMinimumCoin {
     /*Enter the condition only if we can form the sum with the current coin. 
       For example, we cannot form sum 2 with coin value - 7.*/
                 if (i >= coins[j]) { 
-                    if (T[i] > 1 + T[i - coins[j]]) {
-                        T[i] = 1 + T[i - coins[j]];
-                        R[i] = j; //add the coin index.
-                    }
+                    T[i] = Math.min(T[i], 1+T[i-coins[j]]);
+                    R[i] = j;
                 }
             }
         }

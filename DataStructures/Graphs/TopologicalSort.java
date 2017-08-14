@@ -67,7 +67,7 @@ public class TopologicalSort<T> {
         TopologicalSort<Integer> sort = new TopologicalSort<Integer>();
         Deque<Vertex<Integer>> result = sort.topSort(graph);
         while(!result.isEmpty()){
-            System.out.println(result.poll());
+            System.out.print(result.poll()+" ");
         }
     }
 }

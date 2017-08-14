@@ -38,17 +38,17 @@ public class DiameterOfTree {
 		 System.out.println("Diameter "+ diameter);
          
     }
-    int max = 0;
+    int diameter = 0;
     public int findDiameter(Node root){
             maxDepth(root);
-            return max; //return left + right
+            return diameter;
     }
     
     public int maxDepth(Node root) {
                   if (root == null) return 0;
                   int left = maxDepth(root.left);
                   int right = maxDepth(root.right);
-                  max = Math.max(max, left + right);
-                  return 1 + Math.max(left, right); //return left + right + 1
+                  diameter = Math.max(diameter, left + right); // we add maxdepth of left subtree as well as right subtree
+                  return 1 + Math.max(left, right); //return max depth 
           }
     }

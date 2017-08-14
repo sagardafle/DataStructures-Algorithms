@@ -29,10 +29,11 @@ public class Multiplication{
 			return bigger;      /* 1*bigger = bigger */
 		} 
 		
-		/*Compute Half. If even, double it. If uneven, compute double half. */
+		/*Compute Half*/
 		int s = smaller >> 1; //divide smaller number by 2.
 		int halfProd = minProductHelper(s, bigger);
 		
+		/*If even, double it. If uneven, compute double half. */
 		if (smaller % 2 == 0) {
 			return halfProd + halfProd;
 		} else {

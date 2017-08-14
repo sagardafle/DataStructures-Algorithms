@@ -21,12 +21,6 @@ public class MostRepetitiveContinuosChar {
                     result = curr;
                 }
             }
-
-            if (count > max) {
-                max = count;
-                result = curr;
-            }
-
             previous = curr;
 
         }

@@ -21,7 +21,7 @@ This skipping is determined as:
 class MagicIndexNonDistinct{
           public static void main(String[] args){
                     MagicIndexNonDistinct obj = new MagicIndexNonDistinct();
-                    int a[] = {-10,-5,2,2,2,3,4,7,9,12,13}; 
+                    int a[] = {-10,-5,2,2,2,3,4,8,9,12,13}; 
                     System.out.println("Has magix index= " +obj.hasMagicIndex(a));
           }
           
